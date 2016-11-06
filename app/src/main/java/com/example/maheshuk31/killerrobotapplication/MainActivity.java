@@ -1,11 +1,13 @@
 package com.example.maheshuk31.killerrobotapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView imgRobot;
     private TextView txtIntroduction;
+    private Button btnFeedback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +24,14 @@ public class MainActivity extends AppCompatActivity {
 
         imgRobot = (ImageView) findViewById(R.id.imgRobot);
         txtIntroduction = (TextView) findViewById(R.id.txtIntroduction);
+        btnFeedback = (Button) findViewById(R.id.btnFeedback);
+        btnFeedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FeedbackActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
