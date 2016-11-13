@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView imgRobot;
     private TextView txtIntroduction;
-    private Button btnFeedback, btnAboutUs;
+    private Button btnFeedback, btnAboutUs, btnScienceGallery;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,15 @@ public class MainActivity extends AppCompatActivity {
 
         imgRobot = (ImageView) findViewById(R.id.imgRobot);
         txtIntroduction = (TextView) findViewById(R.id.txtIntroduction);
+
+        btnScienceGallery = (Button) findViewById(R.id.btnScienceGallery);
+        btnScienceGallery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ScienceGalleryActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btnFeedback = (Button) findViewById(R.id.btnFeedback);
         btnFeedback.setOnClickListener(new View.OnClickListener() {

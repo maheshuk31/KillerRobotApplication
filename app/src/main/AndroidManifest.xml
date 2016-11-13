@@ -27,6 +27,10 @@
         <activity
             android:name=".AboutUsActivity"
             android:label="@string/title_activity_about_us"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ScienceGalleryActivity"
+            android:label="@string/title_activity_science_gallery"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

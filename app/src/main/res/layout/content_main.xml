@@ -53,17 +53,19 @@
                     android:paddingTop="8dp">
 
                     <Button
-                        android:text="About Us"
+                        android:text="Science Gallery"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
-                        android:id="@+id/btnAboutUs"
+                        android:id="@+id/btnScienceGallery"
+                        android:background="@drawable/btn_shape_normal"
                         android:shadowColor="#8F0000"
                         android:shadowDx="0"
                         android:shadowDy="0"
                         android:shadowRadius="4"
-                        android:textColor="#FF0000"
-                        android:background="@drawable/btn_shape_normal" />
+                        android:textColor="#FF0000"/>
+
+
 
                     <Button
                         android:text="King's College Robotics"
@@ -86,17 +88,17 @@
                     android:paddingTop="8dp">
 
                     <Button
-                        android:text="Science Gallery"
+                        android:text="About Us"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
-                        android:id="@+id/btnScienceGallery"
-                        android:background="@drawable/btn_shape_normal"
+                        android:id="@+id/btnAboutUs"
                         android:shadowColor="#8F0000"
                         android:shadowDx="0"
                         android:shadowDy="0"
                         android:shadowRadius="4"
-                        android:textColor="#FF0000"/>
+                        android:textColor="#FF0000"
+                        android:background="@drawable/btn_shape_normal" />
 
                     <Button
                         android:text="Feedback"
