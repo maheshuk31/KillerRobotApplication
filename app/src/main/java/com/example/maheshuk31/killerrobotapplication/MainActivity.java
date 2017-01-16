@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView imgRobot;
     private TextView txtIntroduction;
-    private Button btnFeedback, btnAboutUs, btnScienceGallery;
+    private Button btnFeedback, btnAboutUs, btnScienceGallery, btnKingsRobotics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ScienceGalleryActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        //check website may not work
+        btnKingsRobotics = (Button) findViewById(R.id.btnKingsRobotics);
+        btnKingsRobotics.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://nms.kcl.ac.uk/core/";
+                startActivity( new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)));
             }
         });
 

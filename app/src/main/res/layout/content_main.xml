@@ -30,8 +30,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginRight="80dp"
                     android:id="@+id/imgRobot"
-                    android:src="@drawable/images"/>
+                    android:src="@drawable/killer_robot"
+                    android:adjustViewBounds="true"/>
 
             </LinearLayout>
 
@@ -72,7 +75,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
-                        android:id="@+id/button2"
+                        android:id="@+id/btnKingsRobotics"
                         android:background="@drawable/btn_shape_normal"
                         android:shadowColor="#8F0000"
                         android:shadowDx="0"
