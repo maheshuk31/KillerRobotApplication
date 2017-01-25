@@ -31,6 +31,30 @@
         <activity
             android:name=".ScienceGalleryActivity"
             android:label="@string/title_activity_science_gallery"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AntennaActivity"
+            android:label="@string/title_activity_antenna"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ScannerActivity"
+            android:label="@string/title_activity_scanner"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PowerCoreActivity"
+            android:label="@string/title_activity_power_core"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LaserActivity"
+            android:label="@string/title_activity_laser"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LegActivity"
+            android:label="@string/title_activity_leg"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".HandActivity"
+            android:label="@string/title_activity_hand"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

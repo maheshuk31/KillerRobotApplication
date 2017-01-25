@@ -5,13 +5,15 @@
     android:id="@+id/content_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#c7daca"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.maheshuk31.killerrobotapplication.MainActivity"
     tools:showIn="@layout/activity_main">
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/contentFull">
 
         <LinearLayout
             android:id="@+id/linLayMain"
@@ -23,27 +25,102 @@
                 android:id="@+id/linLayRobot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center" >
+                android:gravity="center"
+                android:orientation="horizontal">
 
-                <ImageView
+                <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="80dp"
-                    android:layout_marginRight="80dp"
-                    android:id="@+id/imgRobot"
-                    android:src="@drawable/killer_robot"
-                    android:adjustViewBounds="true"/>
+                    android:id="@+id/relativeImage">
+
+                    <ImageView
+                        android:id="@+id/imgRobot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="80dp"
+                        android:layout_marginRight="80dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/killer_robotpng"
+                        android:scaleType="fitXY"/>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/target"
+                        android:background="@null"
+                        android:id="@+id/imgBtnHand"
+                        android:layout_below="@+id/imgBtnPowerCore"
+                        android:layout_alignEnd="@+id/imgRobot"
+                        android:alpha="0.8" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/target"
+                        android:background="@null"
+                        android:id="@+id/imgBtnPowerCore"
+                        android:layout_marginTop="75dp"
+                        android:layout_below="@+id/imgBtnScanner"
+                        android:layout_toStartOf="@+id/imgBtnAntenna"
+                        android:alpha="0.8" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/target"
+                        android:id="@+id/imgBtnLaser"
+                        android:background="@null"
+                        android:layout_centerVertical="true"
+                        android:layout_alignStart="@+id/imgRobot"
+                        android:layout_marginStart="10dp"
+                        android:alpha="0.8" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/target"
+                        android:background="@null"
+                        android:id="@+id/imgBtnLeg"
+                        android:layout_marginTop="45dp"
+                        android:layout_below="@+id/imgBtnHand"
+                        android:layout_toEndOf="@+id/imgBtnLaser"
+                        android:layout_marginStart="26dp"
+                        android:alpha="0.8" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/target_small"
+                        android:background="@null"
+                        android:id="@+id/imgBtnAntenna"
+                        android:layout_marginEnd="17dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_toStartOf="@+id/imgBtnHand"
+                        android:layout_marginTop="8dp"
+                        android:alpha="0.8" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/target_small"
+                        android:background="@null"
+                        android:id="@+id/imgBtnScanner"
+                        android:layout_marginTop="19dp"
+                        android:layout_alignTop="@+id/imgBtnAntenna"
+                        android:layout_toStartOf="@+id/imgBtnAntenna"
+                        android:alpha="0.8" />
+
+                </RelativeLayout>
 
             </LinearLayout>
 
             <TextView
+                android:id="@+id/txtIntroduction"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/txtIntroduction"
-                android:textColor="#000000"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in quam viverra mi eleifend tempor interdum ut arcu. Praesent quis mattis orci. Nullam eu elit id lectus vehicula euismod. Aenean eget euismod justo. Aliquam erat volutpat. Curabitur elementum purus at justo malesuada ultrices. Duis ut molestie metus. "/>
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in quam viverra mi eleifend tempor interdum ut arcu. Praesent quis mattis orci. Nullam eu elit id lectus vehicula euismod. Aenean eget euismod justo. Aliquam erat volutpat. Curabitur elementum purus at justo malesuada ultrices. Duis ut molestie metus. "
+                android:textColor="#000000" />
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -52,89 +129,88 @@
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:weightSum="1"
-                    android:paddingTop="8dp">
+                    android:paddingTop="8dp"
+                    android:weightSum="1">
 
                     <Button
-                        android:text="Science Gallery"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.5"
                         android:id="@+id/btnScienceGallery"
-                        android:background="@drawable/btn_shape_normal"
-                        android:shadowColor="#8F0000"
-                        android:shadowDx="0"
-                        android:shadowDy="0"
-                        android:shadowRadius="4"
-                        android:textColor="#FF0000"/>
-
-
-
-                    <Button
-                        android:text="King's College Robotics"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
-                        android:id="@+id/btnKingsRobotics"
                         android:background="@drawable/btn_shape_normal"
                         android:shadowColor="#8F0000"
                         android:shadowDx="0"
                         android:shadowDy="0"
                         android:shadowRadius="4"
-                        android:textColor="#FF0000"/>
+                        android:text="Science Gallery"
+                        android:textColor="#FF0000" />
+
+
+                    <Button
+                        android:id="@+id/btnKingsRobotics"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/btn_shape_normal"
+                        android:shadowColor="#8F0000"
+                        android:shadowDx="0"
+                        android:shadowDy="0"
+                        android:shadowRadius="4"
+                        android:text="King's College Robotics"
+                        android:textColor="#FF0000" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:weightSum="1"
-                    android:paddingTop="8dp">
+                    android:paddingTop="8dp"
+                    android:weightSum="1">
 
                     <Button
-                        android:text="About Us"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.5"
                         android:id="@+id/btnAboutUs"
-                        android:shadowColor="#8F0000"
-                        android:shadowDx="0"
-                        android:shadowDy="0"
-                        android:shadowRadius="4"
-                        android:textColor="#FF0000"
-                        android:background="@drawable/btn_shape_normal" />
-
-                    <Button
-                        android:text="Feedback"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
-                        android:id="@+id/btnFeedback"
                         android:background="@drawable/btn_shape_normal"
                         android:shadowColor="#8F0000"
                         android:shadowDx="0"
                         android:shadowDy="0"
                         android:shadowRadius="4"
-                        android:textColor="#FF0000"/>
+                        android:text="About Us"
+                        android:textColor="#FF0000" />
+
+                    <Button
+                        android:id="@+id/btnFeedback"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/btn_shape_normal"
+                        android:shadowColor="#8F0000"
+                        android:shadowDx="0"
+                        android:shadowDy="0"
+                        android:shadowRadius="4"
+                        android:text="Feedback"
+                        android:textColor="#FF0000" />
 
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:weightSum="1"
-                    android:paddingTop="8dp">
+                    android:paddingTop="8dp"
+                    android:weightSum="1">
 
                     <Button
-                        android:text="Landscape View"
+                        android:id="@+id/btnLandscapeView"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:id="@+id/btnLandscapeView"
                         android:background="@drawable/btn_shape_normal"
                         android:shadowColor="#8F0000"
                         android:shadowDx="0"
                         android:shadowDy="0"
                         android:shadowRadius="4"
+                        android:text="Landscape View"
                         android:textColor="#FF0000" />
                 </TableRow>
 
@@ -143,7 +219,6 @@
         </LinearLayout>
 
     </RelativeLayout>
-
 
 
 </ScrollView>
