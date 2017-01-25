@@ -60,7 +60,7 @@ Designed to be interactive it provides a unique experience into what a &quot;kil
             android:adjustViewBounds="true"
             android:background="#00000000"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/about_us_map" />
+            app:srcCompat="@drawable/about_us_map_compressed" />
 
         <TextView
             android:id="@+id/txtAboutMapText"
