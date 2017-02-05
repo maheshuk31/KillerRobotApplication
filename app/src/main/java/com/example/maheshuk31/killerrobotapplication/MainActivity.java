@@ -14,13 +14,16 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity{
 
     private ImageView imgRobot;
+    private Switch switchTarget;
     private TextView txtIntroduction;
     private Button btnFeedback, btnAboutUs, btnScienceGallery, btnKingsRobotics;
     private ImageButton imgBtnAntenna, imgBtnScanner, imgBtnPowerCore, imgBtnLaser, imgBtnLeg, imgBtnHand;
@@ -34,6 +37,13 @@ public class MainActivity extends AppCompatActivity{
 
 
         txtIntroduction = (TextView) findViewById(R.id.txtIntroduction);
+        txtIntroduction.setText("With technology era in full force it's no secret robots are a pivotal part " +
+                "in the \"success\"  this era has reached and the prospect of what we might be achieving" +
+                "in the future. And coming to the 89th anniversary of the first robot created in the UK back for" +
+                "people to view and educate on, we introduce [NAME] taking actual robotic parts to try and enslave" +
+                "humanity. "
+                 + "\n" +
+                "Welcome to the current and future of robotics");
 
         imgBtnAntenna = (ImageButton) findViewById(R.id.imgBtnAntenna);
         imgBtnAntenna.setOnClickListener(new View.OnClickListener() {
@@ -125,6 +135,21 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AboutUsActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        switchTarget = (Switch) findViewById(R.id.switchTargets);
+        switchTarget.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked==true){
+                    imgBtnAntenna.setAlpha(0.8f);imgBtnHand.setAlpha(0.8f);imgBtnLaser.setAlpha(0.8f);
+                    imgBtnLeg.setAlpha(0.8f);imgBtnPowerCore.setAlpha(0.8f);imgBtnScanner.setAlpha(0.8f);
+                }
+                else if(isChecked==false){
+                    imgBtnAntenna.setAlpha(0f);imgBtnHand.setAlpha(0f);imgBtnLaser.setAlpha(0f);
+                    imgBtnLeg.setAlpha(0f);imgBtnPowerCore.setAlpha(0f);imgBtnScanner.setAlpha(0f);
+                }
             }
         });
 

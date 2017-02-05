@@ -10,13 +10,20 @@
     tools:context="com.example.maheshuk31.killerrobotapplication.AntennaActivity"
     tools:showIn="@layout/activity_antenna">
 
-    <TextView
-        android:text="TextView"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:srcCompat="@drawable/images"
+        android:id="@+id/imgAntenna"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="117dp"
-        android:layout_marginTop="69dp"
-        android:id="@+id/textView" />
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linLayAntennaContent"
+        android:layout_below="@+id/imgAntenna">
+
+    </LinearLayout>
 </RelativeLayout>
