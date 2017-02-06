@@ -13,10 +13,12 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/images"
+        app:srcCompat="@drawable/antenna_crop"
         android:id="@+id/imgAntenna"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"/>
 
     <LinearLayout
         android:orientation="vertical"
@@ -25,5 +27,21 @@
         android:id="@+id/linLayAntennaContent"
         android:layout_below="@+id/imgAntenna">
 
+        <TextView
+            android:text="X-Band Transponder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtAntennaTitle"
+            android:textColor="#af2121"
+            android:textSize="40dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"/>
+
+        <TextView
+            android:text="test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtAntennaText"
+            android:textColor="#192e8c"/>
     </LinearLayout>
 </RelativeLayout>

@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:text="CORE (Centre for Robotics Research) of King's College have partnered with Science Gallery to produce an exhibition designed to educate you about the robotics that are in society today or in the impending future.
 Designed to be interactive it provides a unique experience into what a &quot;killer&quot; robot could entail with regards to its' separately destroyed parts scattered all over Somerset House Courtyard. "
-            android:textColor="#000000" />
+            android:textColor="#192e8c" />
     </LinearLayout>
 
     <LinearLayout
