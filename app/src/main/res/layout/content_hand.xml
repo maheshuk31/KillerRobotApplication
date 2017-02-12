@@ -9,4 +9,40 @@
     tools:context="com.example.maheshuk31.killerrobotapplication.HandActivity"
     tools:showIn="@layout/activity_hand">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/antenna_crop"
+        android:id="@+id/imgHand"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linLayHandContent"
+        android:layout_below="@+id/imgHand">
+
+        <TextView
+            android:text="X-Band Transponder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtHandTitle"
+            android:textColor="#af2121"
+            android:textSize="40dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"/>
+
+        <TextView
+            android:text="test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtHandText"
+            android:textSize="18dp"
+            android:textColor="#192e8c"/>
+    </LinearLayout>
+
 </RelativeLayout>
