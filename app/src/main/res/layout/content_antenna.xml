@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_antenna"
@@ -10,39 +10,44 @@
     tools:context="com.example.maheshuk31.killerrobotapplication.AntennaActivity"
     tools:showIn="@layout/activity_antenna">
 
-    <ImageView
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/antenna_crop"
-        android:id="@+id/imgAntenna"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"/>
+        android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linLayAntennaContent"
-        android:layout_below="@+id/imgAntenna">
+        <ImageView
+            android:id="@+id/imgAntenna"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            app:srcCompat="@drawable/antenna_crop" />
 
-        <TextView
-            android:text="X-Band Transponder"
+        <LinearLayout
+            android:id="@+id/linLayAntennaContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txtAntennaTitle"
-            android:textColor="#af2121"
-            android:textSize="40dp"
-            android:fontFamily="sans-serif-condensed"
-            android:gravity="center"/>
+            android:layout_below="@+id/imgAntenna"
+            android:orientation="vertical">
 
-        <TextView
-            android:text="test"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtAntennaText"
-            android:textSize="18dp"
-            android:textColor="#192e8c"/>
-    </LinearLayout>
-</RelativeLayout>
+            <TextView
+                android:id="@+id/txtAntennaTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"
+                android:text="X-Band Transponder"
+                android:textColor="#af2121"
+                android:textSize="40dp" />
+
+            <TextView
+                android:id="@+id/txtAntennaText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="test"
+                android:textColor="#192e8c"
+                android:textSize="18dp" />
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>
