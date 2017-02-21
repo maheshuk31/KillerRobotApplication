@@ -31,7 +31,7 @@ public class LaserActivity extends AppCompatActivity {
                         "non-invasive surgery for treating patients with cancerous and/or non cancerous " +
                         "tumours located anywhere in the body all through a single workstation." +
                         "<BR/>" +
-                        "Rather then having to ordeal with a potentially painful surgery, CyberKnife provides" +
+                        "Rather then having to ordeal with a potentially painful surgery, CyberKnife provides " +
                         "a painless, relaxing procedure to the specific part of a patient's body for where they " +
                         "need treatment. Considered to be the first robotic radiosurgery system in the world, " +
                         "is now available worldwide in many different countries after it's widely successful " +
