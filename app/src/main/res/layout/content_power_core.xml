@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_power_core"
@@ -10,4 +10,44 @@
     tools:context="com.example.maheshuk31.killerrobotapplication.PowerCoreActivity"
     tools:showIn="@layout/activity_power_core">
 
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgPowerCore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            app:srcCompat="@drawable/antenna_crop" />
+
+        <LinearLayout
+            android:id="@+id/linLayPowerCoreContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgPowerCore"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtPowerCoreTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"
+                android:text="Radioisotope Thermoelectric Generator"
+                android:textColor="#af2121"
+                android:textSize="40dp" />
+
+            <TextView
+                android:id="@+id/txtPowerCoreText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="test"
+                android:textColor="#192e8c"
+                android:textSize="18dp" />
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

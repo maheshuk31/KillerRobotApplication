@@ -5,14 +5,46 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
+import android.text.Spanned;
 import android.view.View;
+import android.widget.TextView;
 
 public class PowerCoreActivity extends AppCompatActivity {
+
+    private TextView txtPowerCoreText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_power_core);
+
+        txtPowerCoreText = (TextView) findViewById(R.id.txtPowerCoreText);
+        String stringHand =
+                "<B><U>Uses:</U></B> <I>Providing Electricity Power</I>" +
+                        "<BR/>" +
+                        "<B><U>Applications:</U></B> <I>Multiple spacecrafts and satellites</I>" +
+                        "<BR/>" +
+                        "<BR/>" +
+                        "Space is vast and research takes time so the conjunction of the two a key element of " +
+                        "generating the electricity it needs to be able to run a spacecraft for quite a while " +
+                        "and this is what a Radioisotope Thermoelectric Generator is capable of doing." +
+                        "<BR/>" +
+                        "Using the power of radioactive material such as Plutonium and Uranium they generate  " +
+                        "heat converting into electricity by an array of thermocouples. This is not like " +
+                        "technique we have via nuclear power plants which is nuclear fission but rather  " +
+                        "a more steadier and smaller technique of providing power. The longevity with " +
+                        "regards to Plutonium is a decays with a half-life of 87.7 years, which is why " +
+                        "Voyager 1 the farthest man made object has still functioning instruments." +
+                        "<BR/>" +
+                        "With the requirement of nuclear elements one could say that this is unsafe and " +
+                        "very harmful however Radioisotope Thermoelectric Generator are designed in " +
+                        "such a way that the radio active material is sealed within a radiation-proof " +
+                        "shell so if something does go wrong none of the radioactive particles will escape.";
+
+        Spanned stringHandHTML = Html.fromHtml(stringHand);
+        txtPowerCoreText.setText(stringHandHTML);
+
     }
 
 }
