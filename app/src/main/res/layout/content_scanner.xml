@@ -42,10 +42,26 @@
                 android:textSize="40dp" />
 
             <TextView
-                android:id="@+id/txtScannerText"
+                android:id="@+id/txtScannerTextPt1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="test"
+                android:text="text1"
+                android:textColor="#192e8c"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/txtScannerTextPt2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="text2"
+                android:textColor="#192e8c"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/txtScannerTextPt3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="text3"
                 android:textColor="#192e8c"
                 android:textSize="18dp" />
         </LinearLayout>

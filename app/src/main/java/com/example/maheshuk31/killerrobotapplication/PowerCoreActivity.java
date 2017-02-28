@@ -12,15 +12,18 @@ import android.widget.TextView;
 
 public class PowerCoreActivity extends AppCompatActivity {
 
-    private TextView txtPowerCoreText;
+    private TextView txtPowerCoreTextPt1, txtPowerCoreTextPt2, txtPowerCoreTextPt3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_power_core);
 
-        txtPowerCoreText = (TextView) findViewById(R.id.txtPowerCoreText);
-        String stringHand =
+        txtPowerCoreTextPt1 = (TextView) findViewById(R.id.txtPowerCoreTextPt1);
+        txtPowerCoreTextPt2 = (TextView) findViewById(R.id.txtPowerCoreTextPt2);
+        txtPowerCoreTextPt3 = (TextView) findViewById(R.id.txtPowerCoreTextPt3);
+
+        String stringHandPt1 =
                 "<B><U>Uses:</U></B> <I>Providing Electricity Power</I>" +
                         "<BR/>" +
                         "<B><U>Applications:</U></B> <I>Multiple spacecrafts and satellites</I>" +
@@ -28,22 +31,29 @@ public class PowerCoreActivity extends AppCompatActivity {
                         "<BR/>" +
                         "Space is vast and research takes time so the conjunction of the two a key element of " +
                         "generating the electricity it needs to be able to run a spacecraft for quite a while " +
-                        "and this is what a Radioisotope Thermoelectric Generator is capable of doing." +
-                        "<BR/>" +
-                        "Using the power of radioactive material such as Plutonium and Uranium they generate  " +
+                        "and this is what a Radioisotope Thermoelectric Generator is capable of doing.";
+
+        String stringHandPt2 =
+                "Using the power of radioactive material such as Plutonium and Uranium they generate  " +
                         "heat converting into electricity by an array of thermocouples. This is not like " +
                         "technique we have via nuclear power plants which is nuclear fission but rather  " +
                         "a more steadier and smaller technique of providing power. The longevity with " +
                         "regards to Plutonium is a decays with a half-life of 87.7 years, which is why " +
-                        "Voyager 1 the farthest man made object has still functioning instruments." +
-                        "<BR/>" +
-                        "With the requirement of nuclear elements one could say that this is unsafe and " +
+                        "Voyager 1 the farthest man made object has still functioning instruments.";
+
+        String stringHandPt3 =
+                "With the requirement of nuclear elements one could say that this is unsafe and " +
                         "very harmful however Radioisotope Thermoelectric Generator are designed in " +
                         "such a way that the radio active material is sealed within a radiation-proof " +
                         "shell so if something does go wrong none of the radioactive particles will escape.";
 
-        Spanned stringHandHTML = Html.fromHtml(stringHand);
-        txtPowerCoreText.setText(stringHandHTML);
+        Spanned stringHandHTMLPt1 = Html.fromHtml(stringHandPt1);
+        Spanned stringHandHTMLPt2 = Html.fromHtml(stringHandPt2);
+        Spanned stringHandHTMLPt3 = Html.fromHtml(stringHandPt3);
+
+        txtPowerCoreTextPt1.setText(stringHandHTMLPt1);
+        txtPowerCoreTextPt2.setText(stringHandHTMLPt2);
+        txtPowerCoreTextPt3.setText(stringHandHTMLPt3);
 
     }
 

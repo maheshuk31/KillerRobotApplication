@@ -12,15 +12,18 @@ import android.widget.TextView;
 
 public class LegActivity extends AppCompatActivity {
 
-    private TextView txtLegText;
+    private TextView txtLegTextPt1, txtLegTextPt2, txtLegTextPt3 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leg);
 
-        txtLegText = (TextView) findViewById(R.id.txtLegText);
-        String stringHand =
+        txtLegTextPt1 = (TextView) findViewById(R.id.txtLegTextPt1);
+        txtLegTextPt2 = (TextView) findViewById(R.id.txtLegTextPt2);
+        txtLegTextPt3 = (TextView) findViewById(R.id.txtLegTextPt3);
+
+        String stringHandPt1 =
                 "<B><U>Uses:</U></B> <I>Flexible Invasive Surgery Tool</I>" +
                         "<BR/>" +
                         "<B><U>Applications:</U></B> <I>Stiff-Flop Tool</I>" +
@@ -29,18 +32,25 @@ public class LegActivity extends AppCompatActivity {
                         "Under the guidance of Centre for Robotics Research at King's College London " +
                         "leading European scientists and medical doctors in creating a minimal invasive " +
                         "surgery tool to go through a patients body through all the narrow openings " +
-                        "to get to the place that requires attention." +
-                        "<BR/>" +
-                        "Mimicking that of the animal an Octopus's tentacle Stiff-Flop aims to be fully " +
+                        "to get to the place that requires attention.";
+
+        String stringHandPt2 =
+                "Mimicking that of the animal an Octopus's tentacle Stiff-Flop aims to be fully " +
                         "manipulated via its' movement, stiffness and deformity; giving the ability " +
                         "to tackle any situation. A soft robotic arm will be the key part fitting into " +
-                        "being able to squeeze through 12mm diameter Trocar-port." +
-                        "<BR/>" +
-                        "Current plans have reached the stage of successfully operating on a human body " +
+                        "being able to squeeze through 12mm diameter Trocar-port.";
+
+        String stringHandPt3 =
+                "Current plans have reached the stage of successfully operating on a human body " +
                         "with plans to release into the medical field potentially in the near future.";
 
-        Spanned stringHandHTML = Html.fromHtml(stringHand);
-        txtLegText.setText(stringHandHTML);
+        Spanned stringHandHTMLPt1 = Html.fromHtml(stringHandPt1);
+        Spanned stringHandHTMLPt2 = Html.fromHtml(stringHandPt2);
+        Spanned stringHandHTMLPt3 = Html.fromHtml(stringHandPt3);
+
+        txtLegTextPt1.setText(stringHandHTMLPt1);
+        txtLegTextPt2.setText(stringHandHTMLPt2);
+        txtLegTextPt3.setText(stringHandHTMLPt3);
 
     }
 
