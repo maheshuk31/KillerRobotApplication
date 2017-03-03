@@ -49,6 +49,13 @@
                 android:textColor="#192e8c"
                 android:textSize="18dp" />
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:src="@drawable/leg_stiff_flop"/>
+
             <TextView
                 android:id="@+id/txtLegTextPt2"
                 android:layout_width="match_parent"
