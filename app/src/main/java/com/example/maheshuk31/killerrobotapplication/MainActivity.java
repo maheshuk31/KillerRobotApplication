@@ -21,7 +21,6 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -173,16 +172,24 @@ public class MainActivity extends AppCompatActivity{
 
     }
 
+    /**
+     * Works to make device to use it's camera initiated by button name, obtains the QR contents, if
+     * it doesn't find anything or user cancels it and prompts user, if there is a content then it
+     * will parse it to a URL and open it in a browser, also prompts the user as to what was scanned
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        if(result != null){
-            if(result.getContents()==null){
+        IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if(intentResult != null){
+            if(intentResult.getContents()==null){
                 Toast.makeText(this, "Scanning Cancelled", Toast.LENGTH_LONG).show();
             }
             else {
-                Toast.makeText(this, result.getContents(),Toast.LENGTH_LONG).show();
-                String url = result.getContents().toString();
+                Toast.makeText(this, intentResult.getContents(),Toast.LENGTH_LONG).show();
+                String url = intentResult.getContents().toString();
                 startActivity( new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)));
 
             }
