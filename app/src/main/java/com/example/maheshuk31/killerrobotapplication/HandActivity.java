@@ -14,6 +14,10 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+/**
+ * Page about the robot's hand loads when clicking the target on the hand of the robot on the
+ * MainActivity.
+ */
 public class HandActivity extends AppCompatActivity {
 
     private TextView txtHandTextPt1, txtHandTextPt2, txtHandTextPt3;
@@ -37,7 +41,7 @@ public class HandActivity extends AppCompatActivity {
                         "<BR/>" +
                         "In collaboration with the Centre for Robotics Research at King's College via Dr. " +
                         "Hongbin Liu and Shadow though the GSC Project the aim is adding new capabilities " +
-                        "to the Shadow Dexterous Hands. ";
+                        "to the Shadow Dexterous Hands.";
 
         String stringHandPt2 =
                 "Aim is to provide the hand of a robot that is similar to that of a human hand in terms " +
@@ -67,7 +71,14 @@ public class HandActivity extends AppCompatActivity {
         });
     }
 
-    public void outclickYoutube(String id){
+    /**
+     * Used to intent the process of pressing the image button leading to the video, it provides both
+     * cases where the user may not have the YouTube application, in which case it opens via a web
+     * browser, or it will default open on the application if installed.
+     *
+     * @param id The ID part of the URL of any YouTube video.
+     */
+    public void outclickYoutube(String id) {
         Intent applicationIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + id));
         Intent websiteIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=" + id));
         try {

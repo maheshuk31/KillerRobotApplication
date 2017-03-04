@@ -21,10 +21,16 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
-public class MainActivity extends AppCompatActivity{
+/**
+ * The first page that the user will see when the application is opened, the main activity
+ * itself. Contains all the buttons and their information and links to all the other activities/
+ * pages the applications have.
+ */
+public class MainActivity extends AppCompatActivity {
 
     private ImageView imgRobot;
     private Switch switchTarget;
@@ -46,7 +52,7 @@ public class MainActivity extends AppCompatActivity{
                 "in the future. And coming to the 89th anniversary of the first robot created in the UK back for" +
                 "people to view and educate on, we introduce [NAME] taking actual robotic parts to try and enslave" +
                 "humanity. "
-                 + "\n" +
+                + "\n" +
                 "Welcome to the current and future of robotics");
 
         imgBtnAntenna = (ImageButton) findViewById(R.id.imgBtnAntenna);
@@ -118,7 +124,7 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 String url = "https://nms.kcl.ac.uk/core/";
-                startActivity( new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)));
+                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)));
             }
         });
 
@@ -159,23 +165,30 @@ public class MainActivity extends AppCompatActivity{
         switchTarget.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked==true){
-                    imgBtnAntenna.setAlpha(0.8f);imgBtnHand.setAlpha(0.8f);imgBtnLaser.setAlpha(0.8f);
-                    imgBtnLeg.setAlpha(0.8f);imgBtnPowerCore.setAlpha(0.8f);imgBtnScanner.setAlpha(0.8f);
-                }
-                else if(isChecked==false){
-                    imgBtnAntenna.setAlpha(0f);imgBtnHand.setAlpha(0f);imgBtnLaser.setAlpha(0f);
-                    imgBtnLeg.setAlpha(0f);imgBtnPowerCore.setAlpha(0f);imgBtnScanner.setAlpha(0f);
+                if (isChecked == true) {
+                    imgBtnAntenna.setAlpha(0.8f);
+                    imgBtnHand.setAlpha(0.8f);
+                    imgBtnLaser.setAlpha(0.8f);
+                    imgBtnLeg.setAlpha(0.8f);
+                    imgBtnPowerCore.setAlpha(0.8f);
+                    imgBtnScanner.setAlpha(0.8f);
+                } else if (isChecked == false) {
+                    imgBtnAntenna.setAlpha(0f);
+                    imgBtnHand.setAlpha(0f);
+                    imgBtnLaser.setAlpha(0f);
+                    imgBtnLeg.setAlpha(0f);
+                    imgBtnPowerCore.setAlpha(0f);
+                    imgBtnScanner.setAlpha(0f);
                 }
             }
         });
-
     }
 
     /**
      * Works to make device to use it's camera initiated by button name, obtains the QR contents, if
      * it doesn't find anything or user cancels it and prompts user, if there is a content then it
-     * will parse it to a URL and open it in a browser, also prompts the user as to what was scanned
+     * will parse it to a URL and open it in a browser, also prompts the user as to what was scanned.
+     *
      * @param requestCode
      * @param resultCode
      * @param data
@@ -183,28 +196,37 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        if(intentResult != null){
-            if(intentResult.getContents()==null){
+        if (intentResult != null) {
+            if (intentResult.getContents() == null) {
                 Toast.makeText(this, "Scanning Cancelled", Toast.LENGTH_LONG).show();
-            }
-            else {
-                Toast.makeText(this, intentResult.getContents(),Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, intentResult.getContents(), Toast.LENGTH_LONG).show();
                 String url = intentResult.getContents().toString();
-                startActivity( new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)));
-
+                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)));
             }
-        }
-        else {
+        } else {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
 
+    /**
+     * Default method appearing with the creation of the activity, not used.
+     *
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
+    /**
+     * Default method appearing with the creation of the activity, not used.
+     *
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();

@@ -16,25 +16,46 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class emailSending extends AsyncTask<Void,Void,Void> {
+/**
+ * Main class for the email system to work, working in conjunction with the JavaMail library that
+ * was added as a dependency to the project. Uses secure method via SSL to make the message encrypted
+ * when sent. The process is done by Google Mail, can easily be changed to another mailing method
+ * via editing the ports and hosts.
+ */
+public class emailSending extends AsyncTask<Void, Void, Void> {
 
     private Context context;
     private Session session;
     private String email, message;
     private ProgressDialog progressDialog;
 
-    public emailSending(Context context, String email, String message){
+    /**
+     * Allows the class to be used when the class is used to send an email.
+     *
+     * @param context Default context parameter needed when using emailing.
+     * @param email   The recipient of the email which is a String.
+     * @param message The message sent in the email which is a String.
+     */
+    public emailSending(Context context, String email, String message) {
         this.context = context;
         this.email = email;
         this.message = message;
     }
 
+    /**
+     * Default method provided that will produce a dialog while the email sending process is occurring.
+     */
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
         progressDialog = ProgressDialog.show(context, "Feedback Sending", "Please wait...", false, false);
     }
 
+    /**
+     * Once the execution of the method a toast message is produced once the email has been sent.
+     *
+     * @param aVoid Default parameter in the post execute.
+     */
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
@@ -42,10 +63,18 @@ public class emailSending extends AsyncTask<Void,Void,Void> {
         Toast.makeText(context, "Feedback Sent, Thank You", Toast.LENGTH_LONG).show();
     }
 
+    /**
+     * The main process of email being sent occurring in the background. Uses properties to allow an
+     * email to be sent, uses an email configuration in another class (emailConfig.java) authorising
+     * all the credentials needed to be sent. Email subject is also generated based on the devices
+     * Date and Time.
+     *
+     * @param params Default parameter needed for the background method to work.
+     * @return
+     */
     @Override
     protected Void doInBackground(Void... params) {
         Properties props = new Properties();
-
         props.put("mail.smtp.host", "smtp.gmail.com");
         props.put("mail.smtp.socketFactory.port", "465");
         props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
@@ -68,7 +97,7 @@ public class emailSending extends AsyncTask<Void,Void,Void> {
             int ampm = calendar.get(Calendar.AM_PM);
             String am_pm;
             int hourofday = calendar.get(Calendar.HOUR_OF_DAY);
-            if(hourofday < 12) {
+            if (hourofday < 12) {
                 am_pm = "am";
             } else {
                 am_pm = "pm";
@@ -78,7 +107,6 @@ public class emailSending extends AsyncTask<Void,Void,Void> {
             int day = calendar.get(Calendar.DAY_OF_MONTH);
             int month = calendar.get(Calendar.MONTH);
             mm.setSubject("Feedback Received " + day + "/" + month + " " + hour + ":" + minute + am_pm);
-
             mm.setText(message);
 
             Transport.send(mm);

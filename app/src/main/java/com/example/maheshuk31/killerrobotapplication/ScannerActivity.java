@@ -14,6 +14,10 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+/**
+ * Page about the robot's eye scanner loads when clicking the target on the eye scanner of the robot
+ * on the MainActivity.
+ */
 public class ScannerActivity extends AppCompatActivity {
 
     private TextView txtScannerTextPt1, txtScannerTextPt2, txtScannerTextPt3;
@@ -64,10 +68,16 @@ public class ScannerActivity extends AppCompatActivity {
                 outclickYoutube("QJQjm3O-hqw");
             }
         });
-
     }
 
-    public void outclickYoutube(String id){
+    /**
+     * Used to intent the process of pressing the image button leading to the video, it provides both
+     * cases where the user may not have the YouTube application, in which case it opens via a web
+     * browser, or it will default open on the application if installed.
+     *
+     * @param id The ID part of the URL of any YouTube video.
+     */
+    public void outclickYoutube(String id) {
         Intent applicationIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + id));
         Intent websiteIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=" + id));
         try {

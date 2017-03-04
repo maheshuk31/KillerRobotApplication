@@ -52,45 +52,45 @@ Now in Autumn 2018, at London Bridge at Guy's Campus, we King's College will ope
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/linLayScienceGalleryConcept"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:id="@+id/linLayScienceGalleryConcept"
             android:layout_below="@+id/txtScienceGalleryText"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/imageScienceGalleryConcept"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/science_gallery_concept"
-                android:adjustViewBounds="true"/>
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/science_gallery_concept" />
 
             <TextView
                 android:id="@+id/txtScienceGalleryConcept"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Concept of the Science Gallery at Guy's Campus, at London Bridge"
                 android:textColor="#580101"
                 android:textSize="12dp"
-                android:textStyle="italic"
-                android:text="Concept of the Science Gallery at Guy's Campus, at London Bridge" />
+                android:textStyle="italic" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/linLayScienceGalleryMoreInfo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:id="@+id/linLayScienceGalleryMoreInfo"
             android:layout_below="@+id/linLayScienceGalleryConcept"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/txtScienceGalleryMoreInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#0058b1"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 

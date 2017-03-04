@@ -10,6 +10,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
 
+/**
+ * About us page explaining basically what the application is about and who we are, as well as a map
+ * showing where the exhibit is and a link to it via an image opening it either by the device's browser
+ * or Google Maps application if installed.
+ */
 public class AboutUsActivity extends AppCompatActivity {
 
     private ImageButton imageMap;
@@ -24,7 +29,7 @@ public class AboutUsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String url = "https://www.google.com/maps/@51.5108763,-0.1167363,18.01z";
-                startActivity( new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)));
+                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)));
             }
         });
     }

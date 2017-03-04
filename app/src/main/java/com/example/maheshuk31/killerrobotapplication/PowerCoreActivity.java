@@ -14,6 +14,10 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+/**
+ * Page about the robot's power core loads when clicking the target on the power core of the robot
+ * on the MainActivity.
+ */
 public class PowerCoreActivity extends AppCompatActivity {
 
     private TextView txtPowerCoreTextPt1, txtPowerCoreTextPt2, txtPowerCoreTextPt3;
@@ -67,10 +71,16 @@ public class PowerCoreActivity extends AppCompatActivity {
                 outclickYoutube("lTB6Su4ciNc");
             }
         });
-
     }
 
-    public void outclickYoutube(String id){
+    /**
+     * Used to intent the process of pressing the image button leading to the video, it provides both
+     * cases where the user may not have the YouTube application, in which case it opens via a web
+     * browser, or it will default open on the application if installed.
+     *
+     * @param id The ID part of the URL of any YouTube video.
+     */
+    public void outclickYoutube(String id) {
         Intent applicationIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + id));
         Intent websiteIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=" + id));
         try {

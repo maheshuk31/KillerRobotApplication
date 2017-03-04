@@ -11,9 +11,9 @@
     tools:showIn="@layout/activity_main">
 
     <RelativeLayout
+        android:id="@+id/contentFull"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/contentFull">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:id="@+id/linLayMain"
@@ -29,9 +29,9 @@
                 android:orientation="horizontal">
 
                 <RelativeLayout
+                    android:id="@+id/relativeImage"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/relativeImage">
+                    android:layout_height="wrap_content">
 
                     <ImageView
                         android:id="@+id/imgRobot"
@@ -41,85 +41,85 @@
                         android:layout_marginLeft="80dp"
                         android:layout_marginRight="80dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/killer_robotpng"
-                        android:scaleType="fitXY"/>
+                        android:scaleType="fitXY"
+                        android:src="@drawable/killer_robotpng" />
 
                     <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/target"
-                        android:background="@null"
                         android:id="@+id/imgBtnHand"
-                        android:layout_below="@+id/imgBtnPowerCore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_alignEnd="@+id/imgRobot"
-                        android:alpha="0.8" />
+                        android:layout_below="@+id/imgBtnPowerCore"
+                        android:alpha="0.8"
+                        android:background="@null"
+                        app:srcCompat="@drawable/target" />
 
                     <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/target"
-                        android:background="@null"
                         android:id="@+id/imgBtnPowerCore"
-                        android:layout_marginTop="75dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_below="@+id/imgBtnScanner"
+                        android:layout_marginTop="75dp"
                         android:layout_toStartOf="@+id/imgBtnAntenna"
-                        android:alpha="0.8" />
+                        android:alpha="0.8"
+                        android:background="@null"
+                        app:srcCompat="@drawable/target" />
 
                     <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/target"
                         android:id="@+id/imgBtnLaser"
-                        android:background="@null"
-                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_alignStart="@+id/imgRobot"
+                        android:layout_centerVertical="true"
                         android:layout_marginStart="10dp"
-                        android:alpha="0.8" />
+                        android:alpha="0.8"
+                        android:background="@null"
+                        app:srcCompat="@drawable/target" />
 
                     <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/target"
-                        android:background="@null"
                         android:id="@+id/imgBtnLeg"
-                        android:layout_marginTop="45dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_below="@+id/imgBtnHand"
-                        android:layout_toEndOf="@+id/imgBtnLaser"
                         android:layout_marginStart="26dp"
-                        android:alpha="0.8" />
+                        android:layout_marginTop="45dp"
+                        android:layout_toEndOf="@+id/imgBtnLaser"
+                        android:alpha="0.8"
+                        android:background="@null"
+                        app:srcCompat="@drawable/target" />
 
                     <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/target_small"
-                        android:background="@null"
                         android:id="@+id/imgBtnAntenna"
-                        android:layout_marginEnd="17dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_toStartOf="@+id/imgBtnHand"
-                        android:layout_marginTop="8dp"
-                        android:alpha="0.8" />
-
-                    <ImageButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/target_small"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginEnd="17dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_toStartOf="@+id/imgBtnHand"
+                        android:alpha="0.8"
                         android:background="@null"
+                        app:srcCompat="@drawable/target_small" />
+
+                    <ImageButton
                         android:id="@+id/imgBtnScanner"
-                        android:layout_marginTop="19dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_alignTop="@+id/imgBtnAntenna"
+                        android:layout_marginTop="19dp"
                         android:layout_toStartOf="@+id/imgBtnAntenna"
-                        android:alpha="0.8" />
+                        android:alpha="0.8"
+                        android:background="@null"
+                        app:srcCompat="@drawable/target_small" />
 
                     <Switch
-                        android:text="Targets"
+                        android:id="@+id/switchTargets"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="11dp"
-                        android:checked="true"
-                        android:id="@+id/switchTargets"
                         android:layout_alignParentBottom="true"
-                        android:layout_alignParentStart="true" />
+                        android:layout_alignParentStart="true"
+                        android:checked="true"
+                        android:text="Targets"
+                        android:textSize="11dp" />
 
                 </RelativeLayout>
 
@@ -129,9 +129,9 @@
                 android:id="@+id/txtIntroduction"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="18dp"
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in quam viverra mi eleifend tempor interdum ut arcu. Praesent quis mattis orci. Nullam eu elit id lectus vehicula euismod. Aenean eget euismod justo. Aliquam erat volutpat. Curabitur elementum purus at justo malesuada ultrices. Duis ut molestie metus. "
-                android:textColor="#192e8c" />
+                android:textColor="#192e8c"
+                android:textSize="18dp" />
 
             <TableLayout
                 android:layout_width="match_parent"

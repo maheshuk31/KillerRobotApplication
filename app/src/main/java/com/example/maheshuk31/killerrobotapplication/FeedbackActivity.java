@@ -9,7 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class FeedbackActivity extends AppCompatActivity implements View.OnClickListener{
+/**
+ * Page that allows a user to give feedback on the application or any questions pertaining to this
+ * project, via simple forms that need to be filled, sent to a specified email account.
+ */
+public class FeedbackActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText txtName, txtEmail, txtMessage;
     private Button btnSendFeedback;
@@ -27,17 +31,24 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
 
         btnSendFeedback = (Button) findViewById(R.id.btnSendFeedback);
         btnSendFeedback.setOnClickListener(this);
-
     }
 
+    /**
+     * Implemented "onClick" method linked to a method used by the button that will get the information
+     * and send it.
+     *
+     * @param v Default view needed for the "onClick" method to work.
+     */
     @Override
     public void onClick(View v) {
         sendFeedback();
-
     }
 
+    /**
+     * Gets the information from the fields, converts each to a String and stores it into a global
+     * String which is then structured to send an email to the specified email account.
+     */
     private void sendFeedback() {
-
         feedbackName = txtName.getText().toString();
         feedbackEmail = txtEmail.getText().toString();
         feedbackMessage = txtMessage.getText().toString();

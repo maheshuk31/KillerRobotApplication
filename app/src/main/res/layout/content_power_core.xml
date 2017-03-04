@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:adjustViewBounds="true"
-                android:src="@drawable/powercore_rtg"/>
+                android:src="@drawable/powercore_rtg" />
 
             <TextView
                 android:id="@+id/txtPowerCoreTextPt2"
@@ -69,9 +69,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
                 android:background="@null"
-                android:src="@drawable/powercore_video_min" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/video_powercore_min" />
 
             <TextView
                 android:id="@+id/txtPowerCoreTextPt3"

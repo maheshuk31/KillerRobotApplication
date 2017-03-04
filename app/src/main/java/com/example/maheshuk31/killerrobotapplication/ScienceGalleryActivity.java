@@ -10,6 +10,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
+/**
+ * Page explaining science gallery and pertaining towards this project containing a link to their
+ * website opening it on the device's browser.
+ */
 public class ScienceGalleryActivity extends AppCompatActivity {
 
     private TextView txtScienceGalleryMoreInfo;
@@ -25,7 +29,7 @@ public class ScienceGalleryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String url = "https://london.sciencegallery.com/";
-                startActivity( new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)));
+                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)));
             }
         });
     }
