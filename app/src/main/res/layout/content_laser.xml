@@ -64,6 +64,15 @@
                 android:textColor="#192e8c"
                 android:textSize="18dp" />
 
+            <ImageButton
+                android:id="@+id/imgBtnLaserVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:background="@null"
+                android:src="@drawable/laser_video_min" />
+
             <TextView
                 android:id="@+id/txtLaserTextPt3"
                 android:layout_width="match_parent"

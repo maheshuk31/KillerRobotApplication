@@ -1,5 +1,8 @@
 package com.example.maheshuk31.killerrobotapplication;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,11 +11,13 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.Spanned;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class LegActivity extends AppCompatActivity {
 
-    private TextView txtLegTextPt1, txtLegTextPt2, txtLegTextPt3 ;
+    private TextView txtLegTextPt1, txtLegTextPt2, txtLegTextPt3;
+    private ImageButton imgBtnLegVideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +27,7 @@ public class LegActivity extends AppCompatActivity {
         txtLegTextPt1 = (TextView) findViewById(R.id.txtLegTextPt1);
         txtLegTextPt2 = (TextView) findViewById(R.id.txtLegTextPt2);
         txtLegTextPt3 = (TextView) findViewById(R.id.txtLegTextPt3);
+        imgBtnLegVideo = (ImageButton) findViewById(R.id.imgBtnLegVideo);
 
         String stringHandPt1 =
                 "<B><U>Uses:</U></B> <I>Flexible Invasive Surgery Tool</I>" +
@@ -52,6 +58,23 @@ public class LegActivity extends AppCompatActivity {
         txtLegTextPt2.setText(stringHandHTMLPt2);
         txtLegTextPt3.setText(stringHandHTMLPt3);
 
+        imgBtnLegVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                outclickYoutube("XMVjn7bpF-Q");
+            }
+        });
+
+    }
+
+    public void outclickYoutube(String id){
+        Intent applicationIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + id));
+        Intent websiteIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=" + id));
+        try {
+            startActivity(applicationIntent);
+        } catch (ActivityNotFoundException e) {
+            startActivity(websiteIntent);
+        }
     }
 
 }

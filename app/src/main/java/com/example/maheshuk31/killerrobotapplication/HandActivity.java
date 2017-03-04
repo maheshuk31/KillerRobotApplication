@@ -1,5 +1,8 @@
 package com.example.maheshuk31.killerrobotapplication;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,11 +11,13 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.Spanned;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class HandActivity extends AppCompatActivity {
 
     private TextView txtHandTextPt1, txtHandTextPt2, txtHandTextPt3;
+    private ImageButton imgBtnHandVideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +27,7 @@ public class HandActivity extends AppCompatActivity {
         txtHandTextPt1 = (TextView) findViewById(R.id.txtHandTextPt1);
         txtHandTextPt2 = (TextView) findViewById(R.id.txtHandTextPt2);
         txtHandTextPt3 = (TextView) findViewById(R.id.txtHandTextPt3);
+        imgBtnHandVideo = (ImageButton) findViewById(R.id.imgBtnHandVideo);
 
         String stringHandPt1 =
                 "<B><U>Uses:</U></B> <I>Autonomous Grasping</I>" +
@@ -53,6 +59,22 @@ public class HandActivity extends AppCompatActivity {
         txtHandTextPt2.setText(stringHandHTMLPt2);
         txtHandTextPt3.setText(stringHandHTMLPt3);
 
+        imgBtnHandVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                outclickYoutube("9ubXFMklEe8");
+            }
+        });
+    }
+
+    public void outclickYoutube(String id){
+        Intent applicationIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + id));
+        Intent websiteIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=" + id));
+        try {
+            startActivity(applicationIntent);
+        } catch (ActivityNotFoundException e) {
+            startActivity(websiteIntent);
+        }
     }
 
 }

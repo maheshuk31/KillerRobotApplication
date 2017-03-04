@@ -1,5 +1,8 @@
 package com.example.maheshuk31.killerrobotapplication;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,11 +11,13 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.Spanned;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class PowerCoreActivity extends AppCompatActivity {
 
     private TextView txtPowerCoreTextPt1, txtPowerCoreTextPt2, txtPowerCoreTextPt3;
+    private ImageButton imgBtnPowerCoreVideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +27,7 @@ public class PowerCoreActivity extends AppCompatActivity {
         txtPowerCoreTextPt1 = (TextView) findViewById(R.id.txtPowerCoreTextPt1);
         txtPowerCoreTextPt2 = (TextView) findViewById(R.id.txtPowerCoreTextPt2);
         txtPowerCoreTextPt3 = (TextView) findViewById(R.id.txtPowerCoreTextPt3);
+        imgBtnPowerCoreVideo = (ImageButton) findViewById(R.id.imgBtnPowerCoreVideo);
 
         String stringHandPt1 =
                 "<B><U>Uses:</U></B> <I>Providing Electricity Power</I>" +
@@ -55,6 +61,23 @@ public class PowerCoreActivity extends AppCompatActivity {
         txtPowerCoreTextPt2.setText(stringHandHTMLPt2);
         txtPowerCoreTextPt3.setText(stringHandHTMLPt3);
 
+        imgBtnPowerCoreVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                outclickYoutube("lTB6Su4ciNc");
+            }
+        });
+
+    }
+
+    public void outclickYoutube(String id){
+        Intent applicationIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + id));
+        Intent websiteIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=" + id));
+        try {
+            startActivity(applicationIntent);
+        } catch (ActivityNotFoundException e) {
+            startActivity(websiteIntent);
+        }
     }
 
 }

@@ -1,5 +1,8 @@
 package com.example.maheshuk31.killerrobotapplication;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,11 +11,13 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.Spanned;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class ScannerActivity extends AppCompatActivity {
 
     private TextView txtScannerTextPt1, txtScannerTextPt2, txtScannerTextPt3;
+    private ImageButton imgBtnScannerVideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +27,7 @@ public class ScannerActivity extends AppCompatActivity {
         txtScannerTextPt1 = (TextView) findViewById(R.id.txtScannerTextPt1);
         txtScannerTextPt2 = (TextView) findViewById(R.id.txtScannerTextPt2);
         txtScannerTextPt3 = (TextView) findViewById(R.id.txtScannerTextPt3);
+        imgBtnScannerVideo = (ImageButton) findViewById(R.id.imgBtnScannerVideo);
 
         String stringHandPt1 =
                 "<B><U>Uses:</U></B> <I>KCL Spotlight Research</I>" +
@@ -52,6 +58,23 @@ public class ScannerActivity extends AppCompatActivity {
         txtScannerTextPt2.setText(stringHandHTMLPt2);
         txtScannerTextPt3.setText(stringHandHTMLPt3);
 
+        imgBtnScannerVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                outclickYoutube("QJQjm3O-hqw");
+            }
+        });
+
+    }
+
+    public void outclickYoutube(String id){
+        Intent applicationIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + id));
+        Intent websiteIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=" + id));
+        try {
+            startActivity(applicationIntent);
+        } catch (ActivityNotFoundException e) {
+            startActivity(websiteIntent);
+        }
     }
 
 }

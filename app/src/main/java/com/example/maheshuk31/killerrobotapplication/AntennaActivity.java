@@ -1,6 +1,9 @@
 package com.example.maheshuk31.killerrobotapplication;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,11 +12,13 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.Spanned;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class AntennaActivity extends AppCompatActivity {
 
     private TextView txtAntennaTitle, txtAntennaTextPt1, txtAntennaTextPt2, txtAntennaTextPt3;
+    private ImageButton imgBtnAntennaVideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +32,7 @@ public class AntennaActivity extends AppCompatActivity {
         txtAntennaTextPt1 = (TextView) findViewById(R.id.txtAntennaTextPt1);
         txtAntennaTextPt2 = (TextView) findViewById(R.id.txtAntennaTextPt2);
         txtAntennaTextPt3 = (TextView) findViewById(R.id.txtAntennaTextPt3);
+        imgBtnAntennaVideo = (ImageButton) findViewById(R.id.imgBtnAntennaVideo);
 
         String stringAntennaPt1 =
                 "<B><U>Uses:</U></B> <I>Satellite and Military Communications</I>" +
@@ -59,6 +65,24 @@ public class AntennaActivity extends AppCompatActivity {
         txtAntennaTextPt2.setText(stringAntennaHTMLPt2);
         txtAntennaTextPt3.setText(stringAntennaHTMLPt3);
 
+        imgBtnAntennaVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=MqTPwz2QCKc")));
+                outclickYoutube("MqTPwz2QCKc");
+            }
+        });
+
+    }
+
+    public void outclickYoutube(String id){
+        Intent applicationIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + id));
+        Intent websiteIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=" + id));
+        try {
+            startActivity(applicationIntent);
+        } catch (ActivityNotFoundException e) {
+            startActivity(websiteIntent);
+        }
     }
 
 }
