@@ -215,13 +215,26 @@
                         android:id="@+id/btnLandscapeView"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="0.5"
                         android:background="@drawable/btn_shape_normal"
                         android:shadowColor="#8F0000"
                         android:shadowDx="0"
                         android:shadowDy="0"
                         android:shadowRadius="4"
                         android:text="Landscape View"
+                        android:textColor="#FF0000" />
+
+                    <Button
+                        android:id="@+id/btnQRScanner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/btn_shape_normal"
+                        android:shadowColor="#8F0000"
+                        android:shadowDx="0"
+                        android:shadowDy="0"
+                        android:shadowRadius="4"
+                        android:text="QR Scanner"
                         android:textColor="#FF0000" />
                 </TableRow>
 

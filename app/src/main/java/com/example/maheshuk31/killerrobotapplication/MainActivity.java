@@ -1,5 +1,6 @@
 package com.example.maheshuk31.killerrobotapplication;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -19,13 +20,17 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 public class MainActivity extends AppCompatActivity{
 
     private ImageView imgRobot;
     private Switch switchTarget;
     private TextView txtIntroduction;
-    private Button btnFeedback, btnAboutUs, btnScienceGallery, btnKingsRobotics;
+    private Button btnFeedback, btnAboutUs, btnScienceGallery, btnKingsRobotics, btnQRScanner;
     private ImageButton imgBtnAntenna, imgBtnScanner, imgBtnPowerCore, imgBtnLaser, imgBtnLeg, imgBtnHand;
 
     @Override
@@ -100,8 +105,6 @@ public class MainActivity extends AppCompatActivity{
         });
 
 
-
-
         btnScienceGallery = (Button) findViewById(R.id.btnScienceGallery);
         btnScienceGallery.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,6 +141,21 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+        btnQRScanner = (Button) findViewById(R.id.btnQRScanner);
+        final Activity activityThis = this;
+        btnQRScanner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IntentIntegrator intentIntegrator = new IntentIntegrator(activityThis);
+                intentIntegrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
+                intentIntegrator.setPrompt("QR Scanner");
+                intentIntegrator.setCameraId(0);
+                intentIntegrator.setBeepEnabled(false);
+                intentIntegrator.setBarcodeImageEnabled(false);
+                intentIntegrator.initiateScan();
+            }
+        });
+
         switchTarget = (Switch) findViewById(R.id.switchTargets);
         switchTarget.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -153,7 +171,25 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if(result != null){
+            if(result.getContents()==null){
+                Toast.makeText(this, "Scanning Cancelled", Toast.LENGTH_LONG).show();
+            }
+            else {
+                Toast.makeText(this, result.getContents(),Toast.LENGTH_LONG).show();
+                String url = result.getContents().toString();
+                startActivity( new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)));
+
+            }
+        }
+        else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
     }
 
     @Override
