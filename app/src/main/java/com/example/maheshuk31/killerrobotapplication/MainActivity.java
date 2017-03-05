@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imgRobot;
     private Switch switchTarget;
     private TextView txtIntroduction;
-    private Button btnFeedback, btnAboutUs, btnScienceGallery, btnKingsRobotics, btnQRScanner;
+    private Button btnFeedback, btnAboutUs, btnScienceGallery, btnKingsRobotics, btnQRScanner, btnGPS;
     private ImageButton imgBtnAntenna, imgBtnScanner, imgBtnPowerCore, imgBtnLaser, imgBtnLeg, imgBtnHand;
 
     @Override
@@ -158,6 +158,15 @@ public class MainActivity extends AppCompatActivity {
                 intentIntegrator.setBeepEnabled(false);
                 intentIntegrator.setBarcodeImageEnabled(false);
                 intentIntegrator.initiateScan();
+            }
+        });
+
+        btnGPS = (Button) findViewById(R.id.btnGPS);
+        btnGPS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, GPSActivity.class);
+                startActivity(intent);
             }
         });
 

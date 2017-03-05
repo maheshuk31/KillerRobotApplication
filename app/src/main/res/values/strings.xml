@@ -10,4 +10,5 @@
     <string name="title_activity_laser">LaserActivity</string>
     <string name="title_activity_leg">LegActivity</string>
     <string name="title_activity_hand">HandActivity</string>
+    <string name="title_activity_gps">GPSActivity</string>
 </resources>
