@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
         imgRobot = (ImageView) findViewById(R.id.imgRobot);
 
-
         txtIntroduction = (TextView) findViewById(R.id.txtIntroduction);
         txtIntroduction.setText("With technology era in full force it's no secret robots are a pivotal part " +
                 "in the \"success\"  this era has reached and the prospect of what we might be achieving" +

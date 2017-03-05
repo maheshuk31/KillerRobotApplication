@@ -21,17 +21,13 @@ import android.widget.TextView;
  */
 public class AntennaActivity extends AppCompatActivity {
 
-    private TextView txtAntennaTitle, txtAntennaTextPt1, txtAntennaTextPt2, txtAntennaTextPt3;
+    private TextView txtAntennaTextPt1, txtAntennaTextPt2, txtAntennaTextPt3;
     private ImageButton imgBtnAntennaVideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_antenna);
-
-//        txtAntennaTitle = (TextView) findViewById(R.id.txtAntennaTitle);
-//        Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/disposabledroidbb.ttf");
-//        txtAntennaTitle.setTypeface(typeFace);
 
         txtAntennaTextPt1 = (TextView) findViewById(R.id.txtAntennaTextPt1);
         txtAntennaTextPt2 = (TextView) findViewById(R.id.txtAntennaTextPt2);
@@ -72,7 +68,6 @@ public class AntennaActivity extends AppCompatActivity {
         imgBtnAntennaVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=MqTPwz2QCKc")));
                 outclickYoutube("MqTPwz2QCKc");
             }
         });

@@ -21,8 +21,8 @@ import android.widget.TextView;
  */
 public class GPSActivity extends AppCompatActivity implements LocationListener {
 
-    private TextView txtLong, txtLati, txtTest;
-    private Button btnGetGPS;
+    private TextView txtLong, txtLati;
+    private Button btnGPSRefresh;
     private String stringLongitude, stringLatitude;
     private LocationManager locationManager;
     private final int MY_PERMISSIONS_REQUEST_FINE_LOCATION = 6;
@@ -34,16 +34,10 @@ public class GPSActivity extends AppCompatActivity implements LocationListener {
          * the permission.
          */
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
-                    != PackageManager.PERMISSION_GRANTED) {
-
-                if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                        Manifest.permission.ACCESS_FINE_LOCATION)) {
+            if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
                 } else {
-
-                    ActivityCompat.requestPermissions(this,
-                            new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                            MY_PERMISSIONS_REQUEST_FINE_LOCATION);
+                    ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_REQUEST_FINE_LOCATION);
                 }
             } else {
                 getGPS();
@@ -56,9 +50,14 @@ public class GPSActivity extends AppCompatActivity implements LocationListener {
 
         txtLong = (TextView) findViewById(R.id.txtLong);
         txtLati = (TextView) findViewById(R.id.txtLati);
-        txtTest = (TextView) findViewById(R.id.txtTest);
 
-        btnGetGPS = (Button) findViewById(R.id.btnGetGPS);
+        btnGPSRefresh = (Button) findViewById(R.id.btnGPSRefresh);
+        btnGPSRefresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recreate();
+            }
+        });
     }
 
     /**
@@ -92,7 +91,9 @@ public class GPSActivity extends AppCompatActivity implements LocationListener {
     }
 
     /**
-     * Default method of when the GPS location changed and stores into a string every time.
+     * Default method of when the GPS location changed and stores into a string every time. It is rounded
+     * to 5 decimal places for accuracy. There is a checker to see if the user is within one of the GPS
+     * points where the activity will open upon being there.
      *
      * @param location Default parameter needed for locations to be obtained.
      */
@@ -160,4 +161,5 @@ public class GPSActivity extends AppCompatActivity implements LocationListener {
     @Override
     public void onProviderDisabled(String provider) {
     }
+
 }
