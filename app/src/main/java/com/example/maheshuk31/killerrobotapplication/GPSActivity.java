@@ -2,6 +2,7 @@ package com.example.maheshuk31.killerrobotapplication;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -20,7 +21,7 @@ import android.widget.TextView;
  */
 public class GPSActivity extends AppCompatActivity implements LocationListener {
 
-    private TextView txtLong, txtLati;
+    private TextView txtLong, txtLati, txtTest;
     private Button btnGetGPS;
     private String stringLongitude, stringLatitude;
     private LocationManager locationManager;
@@ -55,15 +56,9 @@ public class GPSActivity extends AppCompatActivity implements LocationListener {
 
         txtLong = (TextView) findViewById(R.id.txtLong);
         txtLati = (TextView) findViewById(R.id.txtLati);
+        txtTest = (TextView) findViewById(R.id.txtTest);
 
         btnGetGPS = (Button) findViewById(R.id.btnGetGPS);
-//        btnGetGPS.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                txtLong.setText(stringLongitude);
-//                txtLati.setText(stringLatitude);
-//            }
-//        });
     }
 
     /**
@@ -103,13 +98,38 @@ public class GPSActivity extends AppCompatActivity implements LocationListener {
      */
     @Override
     public void onLocationChanged(Location location) {
-
-        //TODO: MAY NEED TO ROUND THE NUMBERS!
-
-        stringLatitude = location.getLatitude() + "";
-        stringLongitude = location.getLongitude() + "";
+        double dblLatitude = location.getLatitude();
+        double dblLongitude = location.getLongitude();
+        stringLatitude = String.format("%.5f", dblLatitude);
+        stringLongitude = String.format("%.5f", dblLongitude);
         txtLong.setText(stringLongitude);
         txtLati.setText(stringLatitude);
+
+        if (stringLatitude.equals("51.51079") && stringLongitude.equals("-0.11734")) {
+            Intent intent = new Intent(GPSActivity.this, AntennaActivity.class);
+            startActivity(intent);
+            locationManager.removeUpdates(this);
+        } else if (stringLatitude.equals("51.51097") && stringLongitude.equals("-0.11747")) {
+            Intent intent = new Intent(GPSActivity.this, HandActivity.class);
+            startActivity(intent);
+            locationManager.removeUpdates(this);
+        } else if (stringLatitude.equals("51.51121") && stringLongitude.equals("-0.11768")) {
+            Intent intent = new Intent(GPSActivity.this, LaserActivity.class);
+            startActivity(intent);
+            locationManager.removeUpdates(this);
+        } else if (stringLatitude.equals("51.51106") && stringLongitude.equals("-0.11716")) {
+            Intent intent = new Intent(GPSActivity.this, LegActivity.class);
+            startActivity(intent);
+            locationManager.removeUpdates(this);
+        } else if (stringLatitude.equals("51.51132") && stringLongitude.equals("-0.11707")) {
+            Intent intent = new Intent(GPSActivity.this, PowerCoreActivity.class);
+            startActivity(intent);
+            locationManager.removeUpdates(this);
+        } else if (stringLatitude.equals("51.51090") && stringLongitude.equals("-0.11678")) {
+            Intent intent = new Intent(GPSActivity.this, ScannerActivity.class);
+            startActivity(intent);
+            locationManager.removeUpdates(this);
+        }
     }
 
     /**
@@ -117,7 +137,7 @@ public class GPSActivity extends AppCompatActivity implements LocationListener {
      *
      * @param provider Default parameter stored as a String for the provider.
      * @param status   Default parameter stored as a Integer for the status.
-     * @param extras   Default parameter stored as a Bundle for the extras.  
+     * @param extras   Default parameter stored as a Bundle for the extras.
      */
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {

@@ -37,4 +37,14 @@
         android:layout_below="@+id/txtLati"
         android:layout_marginTop="24dp"
         android:text="Do It" />
+
+    <TextView
+        android:id="@+id/txtTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnGetGPS"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textSize="50dp"
+        android:text="initial" />
 </RelativeLayout>
