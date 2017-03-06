@@ -6,6 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
+/**
+ * Leads to the page of where it is a map of the exhibition that leads to each of the pages about
+ * the robot if their corresponding images are tapped.
+ */
 public class ExhibitionMapActivity extends AppCompatActivity {
 
     private ImageButton imgBtnExhibitionAntenna, imgBtnExhibitionScanner, imgBtnExhibitionBody,
