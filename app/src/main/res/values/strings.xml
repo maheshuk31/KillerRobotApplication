@@ -11,4 +11,5 @@
     <string name="title_activity_leg">LegActivity</string>
     <string name="title_activity_hand">HandActivity</string>
     <string name="title_activity_gps">GPSActivity</string>
+    <string name="title_activity_exhibition_map">ExhibitionMapActivity</string>
 </resources>

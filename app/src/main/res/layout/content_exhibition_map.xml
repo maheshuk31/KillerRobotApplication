@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c7daca"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.maheshuk31.killerrobotapplication.ExhibitionMapActivity"
+    tools:showIn="@layout/activity_exhibition_map">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/imgBtnExhibitionBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:src="@drawable/exhibition_body"
+            tools:layout_editor_absoluteX="310dp"
+            tools:layout_editor_absoluteY="85dp"
+            android:layout_below="@+id/imgBtnExhibitionArm"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="39dp" />
+
+        <ImageButton
+            android:id="@+id/imgBtnExhibitionLeg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="38dp"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:src="@drawable/exhibition_legs"
+            tools:layout_editor_absoluteX="524dp"
+            tools:layout_editor_absoluteY="210dp"
+            android:layout_marginTop="15dp"
+            android:layout_alignTop="@+id/imgBtnExhibitionScanner"
+            android:layout_alignParentEnd="true" />
+
+        <ImageButton
+            android:id="@+id/imgBtnExhibitionScanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:src="@drawable/exhibition_scanner"
+            tools:layout_editor_absoluteX="103dp"
+            tools:layout_editor_absoluteY="29dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignEnd="@+id/imgBtnExhibitionBody"
+            android:layout_marginTop="20dp" />
+
+        <ImageButton
+            android:id="@+id/imgBtnExhibitionAntenna"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="37dp"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:src="@drawable/exhibition_antenna"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="176dp"
+            android:layout_alignTop="@+id/imgBtnExhibitionLaser"
+            android:layout_alignEnd="@+id/imgBtnExhibitionLeg" />
+
+        <ImageButton
+            android:id="@+id/imgBtnExhibitionArm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/imgBtnExhibitionLaser"
+            android:layout_below="@+id/imgBtnExhibitionScanner"
+            android:layout_marginEnd="6dp"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:src="@drawable/exhibition_arm"
+            tools:layout_editor_absoluteX="524dp"
+            tools:layout_editor_absoluteY="71dp" />
+
+        <ImageButton
+            android:id="@+id/imgBtnExhibitionLaser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="34dp"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:src="@drawable/exhibition_laser"
+            tools:layout_editor_absoluteX="28dp"
+            tools:layout_editor_absoluteY="302dp"
+            android:layout_below="@+id/imgBtnExhibitionLeg"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="82dp" />
+
+    </RelativeLayout>
+</ScrollView>

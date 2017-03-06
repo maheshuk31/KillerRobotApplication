@@ -61,6 +61,12 @@
         <activity
             android:name=".GPSActivity"
             android:label="@string/title_activity_gps"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ExhibitionMapActivity"
+            android:label="@string/title_activity_exhibition_map"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

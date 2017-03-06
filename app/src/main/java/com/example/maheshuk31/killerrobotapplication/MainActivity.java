@@ -2,6 +2,7 @@ package com.example.maheshuk31.killerrobotapplication;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imgRobot;
     private Switch switchTarget;
     private TextView txtIntroduction;
-    private Button btnFeedback, btnAboutUs, btnScienceGallery, btnKingsRobotics, btnQRScanner, btnGPS;
+    private Button btnFeedback, btnAboutUs, btnScienceGallery, btnKingsRobotics, btnQRScanner, btnGPS, btnExhibitionMap;
     private ImageButton imgBtnAntenna, imgBtnScanner, imgBtnPowerCore, imgBtnLaser, imgBtnLeg, imgBtnHand;
 
     @Override
@@ -165,6 +166,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, GPSActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnExhibitionMap = (Button) findViewById(R.id.btnExhibitionMap);
+        btnExhibitionMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ExhibitionMapActivity.class);
                 startActivity(intent);
             }
         });

@@ -106,6 +106,8 @@ public class GPSActivity extends AppCompatActivity implements LocationListener {
         txtLong.setText(stringLongitude);
         txtLati.setText(stringLatitude);
 
+        //TODO: ADD TEXT VIEW TO SHOW IF THE GPS IS NOT ENABLED BY MAKING .EQUAL TO 0.00000
+
         if (stringLatitude.equals("51.51079") && stringLongitude.equals("-0.11734")) {
             Intent intent = new Intent(GPSActivity.this, AntennaActivity.class);
             startActivity(intent);

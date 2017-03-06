@@ -38,8 +38,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="80dp"
-                        android:layout_marginRight="80dp"
+                        android:layout_marginLeft="210dp"
+                        android:layout_marginRight="210dp"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
                         android:src="@drawable/killer_robotpng" />
@@ -212,7 +212,7 @@
                     android:weightSum="1">
 
                     <Button
-                        android:id="@+id/btnExhibitionMap"
+                        android:id="@+id/btnLandscapeView"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
