@@ -22,7 +22,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            app:srcCompat="@drawable/antenna_crop" />
+            app:srcCompat="@drawable/arm_pt1" />
 
         <LinearLayout
             android:id="@+id/linLayHandContent"
@@ -30,6 +30,12 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/imgHand"
             android:orientation="vertical">
+
+            <SeekBar
+                android:id="@+id/seekBarHand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="3" />
 
             <TextView
                 android:id="@+id/txtHandTitle"

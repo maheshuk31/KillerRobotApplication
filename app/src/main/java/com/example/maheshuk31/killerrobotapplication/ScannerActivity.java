@@ -12,6 +12,8 @@ import android.text.Html;
 import android.text.Spanned;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 /**
@@ -22,12 +24,16 @@ public class ScannerActivity extends AppCompatActivity {
 
     private TextView txtScannerTextPt1, txtScannerTextPt2, txtScannerTextPt3;
     private ImageButton imgBtnScannerVideo;
+    private ImageView imgScanner;
+    private SeekBar seekBarScanner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanner);
 
+        imgScanner = (ImageView) findViewById(R.id.imgScanner);
+        seekBarScanner = (SeekBar) findViewById(R.id.seekBarScanner);
         txtScannerTextPt1 = (TextView) findViewById(R.id.txtScannerTextPt1);
         txtScannerTextPt2 = (TextView) findViewById(R.id.txtScannerTextPt2);
         txtScannerTextPt3 = (TextView) findViewById(R.id.txtScannerTextPt3);
@@ -68,6 +74,29 @@ public class ScannerActivity extends AppCompatActivity {
                 outclickYoutube("QJQjm3O-hqw");
             }
         });
+
+        seekBarScanner.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (progress == 0) {
+                    imgScanner.setImageResource(R.drawable.scanner_pt1);
+                } else if (progress == 1) {
+                    imgScanner.setImageResource(R.drawable.scanner_pt2);
+                } else if (progress == 2) {
+                    imgScanner.setImageResource(R.drawable.scanner_pt3);
+                } else if (progress == 3) {
+                    imgScanner.setImageResource(R.drawable.scanner_pt4);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
     }
 
     /**
@@ -85,6 +114,12 @@ public class ScannerActivity extends AppCompatActivity {
         } catch (ActivityNotFoundException e) {
             startActivity(websiteIntent);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
     }
 
 }

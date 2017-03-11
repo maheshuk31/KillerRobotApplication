@@ -12,6 +12,8 @@ import android.text.Html;
 import android.text.Spanned;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 /**
@@ -22,12 +24,16 @@ public class LegActivity extends AppCompatActivity {
 
     private TextView txtLegTextPt1, txtLegTextPt2, txtLegTextPt3;
     private ImageButton imgBtnLegVideo;
+    private ImageView imgLeg;
+    private SeekBar seekBarLeg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leg);
 
+        imgLeg = (ImageView) findViewById(R.id.imgLeg);
+        seekBarLeg = (SeekBar) findViewById(R.id.seekBarLeg);
         txtLegTextPt1 = (TextView) findViewById(R.id.txtLegTextPt1);
         txtLegTextPt2 = (TextView) findViewById(R.id.txtLegTextPt2);
         txtLegTextPt3 = (TextView) findViewById(R.id.txtLegTextPt3);
@@ -68,6 +74,29 @@ public class LegActivity extends AppCompatActivity {
                 outclickYoutube("XMVjn7bpF-Q");
             }
         });
+
+        seekBarLeg.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (progress == 0) {
+                    imgLeg.setImageResource(R.drawable.legs_pt1);
+                } else if (progress == 1) {
+                    imgLeg.setImageResource(R.drawable.legs_pt2);
+                } else if (progress == 2) {
+                    imgLeg.setImageResource(R.drawable.legs_pt3);
+                } else if (progress == 3) {
+                    imgLeg.setImageResource(R.drawable.legs_pt4);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
     }
 
     /**
@@ -85,6 +114,12 @@ public class LegActivity extends AppCompatActivity {
         } catch (ActivityNotFoundException e) {
             startActivity(websiteIntent);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
     }
 
 }

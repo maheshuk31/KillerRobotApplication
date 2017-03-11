@@ -12,6 +12,8 @@ import android.text.Html;
 import android.text.Spanned;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 /**
@@ -22,12 +24,16 @@ public class PowerCoreActivity extends AppCompatActivity {
 
     private TextView txtPowerCoreTextPt1, txtPowerCoreTextPt2, txtPowerCoreTextPt3;
     private ImageButton imgBtnPowerCoreVideo;
+    private ImageView imgPowerCore;
+    private SeekBar seekBarPowerCore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_power_core);
 
+        imgPowerCore = (ImageView) findViewById(R.id.imgPowerCore);
+        seekBarPowerCore = (SeekBar) findViewById(R.id.seekBarPowerCore);
         txtPowerCoreTextPt1 = (TextView) findViewById(R.id.txtPowerCoreTextPt1);
         txtPowerCoreTextPt2 = (TextView) findViewById(R.id.txtPowerCoreTextPt2);
         txtPowerCoreTextPt3 = (TextView) findViewById(R.id.txtPowerCoreTextPt3);
@@ -71,6 +77,29 @@ public class PowerCoreActivity extends AppCompatActivity {
                 outclickYoutube("lTB6Su4ciNc");
             }
         });
+
+        seekBarPowerCore.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (progress == 0) {
+                    imgPowerCore.setImageResource(R.drawable.body_pt1);
+                } else if (progress == 1) {
+                    imgPowerCore.setImageResource(R.drawable.body_pt2);
+                } else if (progress == 2) {
+                    imgPowerCore.setImageResource(R.drawable.body_pt3);
+                } else if (progress == 3) {
+                    imgPowerCore.setImageResource(R.drawable.body_pt4);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
     }
 
     /**
@@ -88,6 +117,12 @@ public class PowerCoreActivity extends AppCompatActivity {
         } catch (ActivityNotFoundException e) {
             startActivity(websiteIntent);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
     }
 
 }

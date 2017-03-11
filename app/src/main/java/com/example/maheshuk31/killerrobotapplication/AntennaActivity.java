@@ -13,6 +13,8 @@ import android.text.Html;
 import android.text.Spanned;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 /**
@@ -23,12 +25,16 @@ public class AntennaActivity extends AppCompatActivity {
 
     private TextView txtAntennaTextPt1, txtAntennaTextPt2, txtAntennaTextPt3;
     private ImageButton imgBtnAntennaVideo;
+    private ImageView imgAntenna;
+    private SeekBar seekBarAntenna;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_antenna);
 
+        imgAntenna = (ImageView) findViewById(R.id.imgAntenna);
+        seekBarAntenna = (SeekBar) findViewById(R.id.seekBarAntenna);
         txtAntennaTextPt1 = (TextView) findViewById(R.id.txtAntennaTextPt1);
         txtAntennaTextPt2 = (TextView) findViewById(R.id.txtAntennaTextPt2);
         txtAntennaTextPt3 = (TextView) findViewById(R.id.txtAntennaTextPt3);
@@ -71,6 +77,29 @@ public class AntennaActivity extends AppCompatActivity {
                 outclickYoutube("MqTPwz2QCKc");
             }
         });
+
+        seekBarAntenna.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (progress == 0) {
+                    imgAntenna.setImageResource(R.drawable.antenna_pt1);
+                } else if (progress == 1) {
+                    imgAntenna.setImageResource(R.drawable.antenna_pt2);
+                } else if (progress == 2) {
+                    imgAntenna.setImageResource(R.drawable.antenna_pt3);
+                } else if (progress == 3) {
+                    imgAntenna.setImageResource(R.drawable.antenna_pt4);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
     }
 
     /**
@@ -88,6 +117,12 @@ public class AntennaActivity extends AppCompatActivity {
         } catch (ActivityNotFoundException e) {
             startActivity(websiteIntent);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
     }
 
 }

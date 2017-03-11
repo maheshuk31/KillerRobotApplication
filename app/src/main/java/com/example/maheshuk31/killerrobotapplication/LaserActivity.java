@@ -12,6 +12,8 @@ import android.text.Html;
 import android.text.Spanned;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 /**
@@ -22,12 +24,16 @@ public class LaserActivity extends AppCompatActivity {
 
     private TextView txtLaserTextPt1, txtLaserTextPt2, txtLaserTextPt3;
     private ImageButton imgBtnLaserVideo;
+    private ImageView imgLaser;
+    private SeekBar seekBarLaser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_laser);
 
+        imgLaser = (ImageView) findViewById(R.id.imgLaser);
+        seekBarLaser = (SeekBar) findViewById(R.id.seekBarLaser);
         txtLaserTextPt1 = (TextView) findViewById(R.id.txtLaserTextPt1);
         txtLaserTextPt2 = (TextView) findViewById(R.id.txtLaserTextPt2);
         txtLaserTextPt3 = (TextView) findViewById(R.id.txtLaserTextPt3);
@@ -69,6 +75,29 @@ public class LaserActivity extends AppCompatActivity {
                 outclickYoutube("4EkFvuqbNGo");
             }
         });
+
+        seekBarLaser.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (progress == 0) {
+                    imgLaser.setImageResource(R.drawable.laser_pt1);
+                } else if (progress == 1) {
+                    imgLaser.setImageResource(R.drawable.laser_pt2);
+                } else if (progress == 2) {
+                    imgLaser.setImageResource(R.drawable.laser_pt3);
+                } else if (progress == 3) {
+                    imgLaser.setImageResource(R.drawable.laser_pt4);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
     }
 
     /**
@@ -86,6 +115,12 @@ public class LaserActivity extends AppCompatActivity {
         } catch (ActivityNotFoundException e) {
             startActivity(websiteIntent);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
     }
 
 }

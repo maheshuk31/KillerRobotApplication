@@ -42,7 +42,7 @@
                         android:layout_marginRight="80dp"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/killer_robotpng" />
+                        android:src="@drawable/killer_robot_shadowed" />
 
                     <ImageButton
                         android:id="@+id/imgBtnHand"

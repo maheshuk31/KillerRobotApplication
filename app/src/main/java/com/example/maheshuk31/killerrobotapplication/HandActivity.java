@@ -12,6 +12,8 @@ import android.text.Html;
 import android.text.Spanned;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 /**
@@ -22,12 +24,16 @@ public class HandActivity extends AppCompatActivity {
 
     private TextView txtHandTextPt1, txtHandTextPt2, txtHandTextPt3;
     private ImageButton imgBtnHandVideo;
+    private ImageView imgHand;
+    private SeekBar seekBarHand;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hand);
 
+        imgHand = (ImageView) findViewById(R.id.imgHand);
+        seekBarHand = (SeekBar) findViewById(R.id.seekBarHand);
         txtHandTextPt1 = (TextView) findViewById(R.id.txtHandTextPt1);
         txtHandTextPt2 = (TextView) findViewById(R.id.txtHandTextPt2);
         txtHandTextPt3 = (TextView) findViewById(R.id.txtHandTextPt3);
@@ -69,6 +75,29 @@ public class HandActivity extends AppCompatActivity {
                 outclickYoutube("9ubXFMklEe8");
             }
         });
+
+        seekBarHand.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (progress == 0) {
+                    imgHand.setImageResource(R.drawable.arm_pt1);
+                } else if (progress == 1) {
+                    imgHand.setImageResource(R.drawable.arm_pt2);
+                } else if (progress == 2) {
+                    imgHand.setImageResource(R.drawable.arm_pt3);
+                } else if (progress == 3) {
+                    imgHand.setImageResource(R.drawable.arm_pt4);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
     }
 
     /**
@@ -86,6 +115,12 @@ public class HandActivity extends AppCompatActivity {
         } catch (ActivityNotFoundException e) {
             startActivity(websiteIntent);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
     }
 
 }
