@@ -60,4 +60,10 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
         emailSending sm = new emailSending(this, email, message);
         sm.execute();
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+    }
 }

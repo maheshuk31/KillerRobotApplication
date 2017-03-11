@@ -122,5 +122,4 @@ public class HandActivity extends AppCompatActivity {
         super.onBackPressed();
         this.finish();
     }
-
 }

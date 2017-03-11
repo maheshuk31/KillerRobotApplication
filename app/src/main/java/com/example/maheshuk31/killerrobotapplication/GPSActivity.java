@@ -164,4 +164,9 @@ public class GPSActivity extends AppCompatActivity implements LocationListener {
     public void onProviderDisabled(String provider) {
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+    }
 }

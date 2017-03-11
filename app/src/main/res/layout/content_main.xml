@@ -144,7 +144,7 @@
                     android:weightSum="1">
 
                     <Button
-                        android:id="@+id/btnScienceGallery"
+                        android:id="@+id/btnQRScanner"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
@@ -153,12 +153,11 @@
                         android:shadowDx="0"
                         android:shadowDy="0"
                         android:shadowRadius="4"
-                        android:text="Science Gallery"
+                        android:text="QR Scanner"
                         android:textColor="#FF0000" />
-
 
                     <Button
-                        android:id="@+id/btnKingsRobotics"
+                        android:id="@+id/btnGPS"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
@@ -167,8 +166,9 @@
                         android:shadowDx="0"
                         android:shadowDy="0"
                         android:shadowRadius="4"
-                        android:text="King's College Robotics"
+                        android:text="GPS Feature"
                         android:textColor="#FF0000" />
+
                 </TableRow>
 
                 <TableRow
@@ -212,7 +212,7 @@
                     android:weightSum="1">
 
                     <Button
-                        android:id="@+id/btnExhibitionMap"
+                        android:id="@+id/btnKingsRobotics"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
@@ -221,11 +221,11 @@
                         android:shadowDx="0"
                         android:shadowDy="0"
                         android:shadowRadius="4"
-                        android:text="Map"
+                        android:text="King's College Robotics"
                         android:textColor="#FF0000" />
 
                     <Button
-                        android:id="@+id/btnQRScanner"
+                        android:id="@+id/btnScienceGallery"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
@@ -234,8 +234,9 @@
                         android:shadowDx="0"
                         android:shadowDy="0"
                         android:shadowRadius="4"
-                        android:text="QR Scanner"
+                        android:text="Science Gallery"
                         android:textColor="#FF0000" />
+
                 </TableRow>
 
                 <TableRow
@@ -245,16 +246,16 @@
                     android:weightSum="1">
 
                     <Button
-                        android:id="@+id/btnGPS"
+                        android:id="@+id/btnExhibitionMap"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.5"
+                        android:layout_weight="1"
                         android:background="@drawable/btn_shape_normal"
                         android:shadowColor="#8F0000"
                         android:shadowDx="0"
                         android:shadowDy="0"
                         android:shadowRadius="4"
-                        android:text="GPS Feature"
+                        android:text="Exhibtion Map"
                         android:textColor="#FF0000" />
 
                 </TableRow>

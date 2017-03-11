@@ -42,7 +42,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Originally located in Dublin Ireland this unique experience involves combining art with science to provide a unique interactive experience to people where everything is brought to life-size for maximum fun and learning.
+                android:textSize="18dp"
+                android:text="Originally located in Dublin, Ireland this unique experience involves combining art with science to provide a unique interactive experience to people where everything is brought to life-size for maximum fun and learning.
 Now in Autumn 2018, at London Bridge at Guy's Campus, we King's College will open available to be visited for free. And this exhibition wouldn't have happened without the Science Gallery's help and contribution"
                 android:textColor="#192e8c">
 

@@ -124,5 +124,4 @@ public class AntennaActivity extends AppCompatActivity {
         super.onBackPressed();
         this.finish();
     }
-
 }
