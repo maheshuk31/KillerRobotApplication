@@ -15,15 +15,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.vstechlab.easyfonts.EasyFonts;
+
 /**
  * Feature for adding GPS integration to work with the exhibition being in a certain GPS Range to open
  * the activity on the fly rather then pressing.
  */
 public class GPSActivity extends AppCompatActivity implements LocationListener {
 
-    private TextView txtLong, txtLati;
+    private TextView txtGPSCurrentLocation, txtGPSTextExplanation;
+    private boolean GPSEnabled = false;
     private Button btnGPSRefresh;
     private String stringLongitude, stringLatitude;
+    private String stringZero = " ";
     private LocationManager locationManager;
     private final int MY_PERMISSIONS_REQUEST_FINE_LOCATION = 6;
 
@@ -48,8 +52,17 @@ public class GPSActivity extends AppCompatActivity implements LocationListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gps);
 
-        txtLong = (TextView) findViewById(R.id.txtLong);
-        txtLati = (TextView) findViewById(R.id.txtLati);
+        txtGPSCurrentLocation = (TextView) findViewById(R.id.txtGPSCurrentLocation);
+        txtGPSTextExplanation = (TextView) findViewById(R.id.txtGPSTextExplanation);
+
+        txtGPSCurrentLocation.setText("GPS");
+        if(GPSEnabled == false){
+            txtGPSCurrentLocation.setText("There is no location found, please check your GPS is enabled and press the refresh button. ");
+        }
+
+        txtGPSCurrentLocation.setTypeface(EasyFonts.robotoMedium(this));
+
+        txtGPSTextExplanation.setTypeface(EasyFonts.caviarDreamsItalic(this));
 
         btnGPSRefresh = (Button) findViewById(R.id.btnGPSRefresh);
         btnGPSRefresh.setOnClickListener(new View.OnClickListener() {
@@ -99,14 +112,15 @@ public class GPSActivity extends AppCompatActivity implements LocationListener {
      */
     @Override
     public void onLocationChanged(Location location) {
+        GPSEnabled = true;
         double dblLatitude = location.getLatitude();
         double dblLongitude = location.getLongitude();
         stringLatitude = String.format("%.5f", dblLatitude);
         stringLongitude = String.format("%.5f", dblLongitude);
-        txtLong.setText(stringLongitude);
-        txtLati.setText(stringLatitude);
-
-        //TODO: ADD TEXT VIEW TO SHOW IF THE GPS IS NOT ENABLED BY MAKING .EQUAL TO 0.00000
+        txtGPSCurrentLocation.setText("Your current location is: " + "\n"
+                + "Longitude: " + stringLongitude + "\n"
+                + "Latitude: " + stringLatitude + "\n"
+                + stringZero);
 
         if (stringLatitude.equals("51.51079") && stringLongitude.equals("-0.11734")) {
             Intent intent = new Intent(GPSActivity.this, AntennaActivity.class);
@@ -132,6 +146,9 @@ public class GPSActivity extends AppCompatActivity implements LocationListener {
             Intent intent = new Intent(GPSActivity.this, ScannerActivity.class);
             startActivity(intent);
             locationManager.removeUpdates(this);
+        } else if (stringLatitude.equals("0.00000") && stringLongitude.equals("0.00000")) {
+            stringZero = "There is no location found, please check your GPS is enabled and press the refresh button. ";
+            txtGPSCurrentLocation.setText(stringZero);
         }
     }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,30 +9,236 @@
     tools:context="com.example.maheshuk31.killerrobotapplication.GPSActivity"
     tools:showIn="@layout/activity_gps">
 
-    <TextView
-        android:id="@+id/txtLong"
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:text="Longitude"
-        android:layout_below="@+id/txtLati"
-        android:layout_alignParentStart="true" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/txtLati"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:text="Latitude"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        <LinearLayout
+            android:id="@+id/linLayCurrentLocationText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btnGPSRefresh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Refresh" />
+            <TextView
+                android:id="@+id/txtGPSCurrentLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="#192e8c"
+                android:textSize="14dp" />
+        </LinearLayout>
 
-</RelativeLayout>
+        <TableLayout
+            android:id="@+id/tblLayGPSKey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linLayCurrentLocationText"
+            android:background="@drawable/table_shell">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_shell"
+                android:paddingTop="8dp"
+                android:weightSum="1">
+
+                <ImageView
+                    android:id="@+id/imgGPSAntenna"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:adjustViewBounds="true"
+                    android:paddingLeft="60dp"
+                    android:paddingRight="60dp"
+                    android:src="@drawable/antenna_pt1" />
+
+                <TextView
+                    android:id="@+id/txtGPSAntenna"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.6"
+                    android:fontFamily="monospace"
+                    android:text="Longitude:  -0.11734\nLatitude:   51.51079"
+                    android:textColor="#241b49" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_shell"
+                android:paddingTop="8dp"
+                android:weightSum="1">
+
+                <ImageView
+                    android:id="@+id/imgGPSScanner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:adjustViewBounds="true"
+                    android:paddingLeft="60dp"
+                    android:paddingRight="60dp"
+                    android:src="@drawable/scanner_pt1" />
+
+                <TextView
+                    android:id="@+id/txtGPSScanner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.6"
+                    android:fontFamily="monospace"
+                    android:text="Longitude:  -0.11678\nLatitude:   51.51090"
+                    android:textColor="#241b49" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_shell"
+                android:paddingTop="8dp"
+                android:weightSum="1">
+
+                <ImageView
+                    android:id="@+id/imgGPSPowerCore"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:adjustViewBounds="true"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:src="@drawable/body_pt1" />
+
+                <TextView
+                    android:id="@+id/txtGPSPowerCore"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.6"
+                    android:fontFamily="monospace"
+                    android:text="Longitude:  -0.11707\nLatitude:   51.51132"
+                    android:textColor="#241b49" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_shell"
+                android:paddingTop="8dp"
+                android:weightSum="1">
+
+                <ImageView
+                    android:id="@+id/imgGPSLaser"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:adjustViewBounds="true"
+                    android:paddingLeft="50dp"
+                    android:paddingRight="50dp"
+                    android:src="@drawable/laser_pt1" />
+
+                <TextView
+                    android:id="@+id/txtGPSLaser"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.6"
+                    android:fontFamily="monospace"
+                    android:text="Longitude:  -0.11768\nLatitude:   51.51121"
+                    android:textColor="#241b49" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_shell"
+                android:paddingTop="8dp"
+                android:weightSum="1">
+
+                <ImageView
+                    android:id="@+id/imgGPSArm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:adjustViewBounds="true"
+                    android:paddingLeft="65dp"
+                    android:paddingRight="65dp"
+                    android:src="@drawable/arm_pt1" />
+
+                <TextView
+                    android:id="@+id/txtGPSArm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.6"
+                    android:fontFamily="monospace"
+                    android:text="Longitude:  -0.11747\nLatitude:   51.51097"
+                    android:textColor="#241b49" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_shell"
+                android:paddingTop="8dp"
+                android:weightSum="1">
+
+                <ImageView
+                    android:id="@+id/imgGPSLeg"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:adjustViewBounds="true"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp"
+                    android:src="@drawable/legs_pt1" />
+
+                <TextView
+                    android:id="@+id/txtGPSLeg"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.6"
+                    android:fontFamily="monospace"
+                    android:text="Longitude:  -0.11716\nLatitude:   51.51106"
+                    android:textColor="#241b49" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/txtGPSTextExplanation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Once returning to this screen be sure to press the refresh button to continue using GPS"
+                    android:textColor="#714b29"
+                    android:textStyle="italic" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="4dp"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/btnGPSRefresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_shape_normal"
+                    android:shadowColor="#8F0000"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="4"
+                    android:text="Refresh"
+                    android:textColor="#FF0000" />
+            </TableRow>
+        </TableLayout>
+
+    </RelativeLayout>
+</ScrollView>
