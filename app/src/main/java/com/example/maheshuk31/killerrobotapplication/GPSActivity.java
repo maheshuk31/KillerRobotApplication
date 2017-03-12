@@ -181,6 +181,10 @@ public class GPSActivity extends AppCompatActivity implements LocationListener {
     public void onProviderDisabled(String provider) {
     }
 
+    /**
+     * Overrides the normal press of the back button on the device to now close the activity needed
+     * to save memory from background activities that are open.
+     */
     @Override
     public void onBackPressed() {
         super.onBackPressed();

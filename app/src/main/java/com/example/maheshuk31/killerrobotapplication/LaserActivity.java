@@ -125,6 +125,10 @@ public class LaserActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Overrides the normal press of the back button on the device to now close the activity needed
+     * to save memory from background activities that are open.
+     */
     @Override
     public void onBackPressed() {
         super.onBackPressed();

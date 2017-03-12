@@ -48,13 +48,13 @@ public class MainActivity extends AppCompatActivity {
         imgRobot = (ImageView) findViewById(R.id.imgRobot);
 
         txtIntroduction = (TextView) findViewById(R.id.txtIntroduction);
-        txtIntroduction.setText("With technology era in full force it's no secret robots are a pivotal part " +
-                "in the \"success\"  this era has reached and the prospect of what we might be achieving" +
-                "in the future. And coming to the 89th anniversary of the first robot created in the UK back for" +
-                "people to view and educate on, we introduce [NAME] taking actual robotic parts to try and enslave" +
-                "humanity. "
-                + "\n" +
-                "Welcome to the current and future of robotics");
+        txtIntroduction.setText("With technology era in full force it's no secret robots are a pivotal part "
+                + "in the \"success\"  this era has reached and the prospect of what we might be achieving "
+                + "in the future. And coming to the 89th anniversary of the first robot created in the UK back for "
+                + "people to view and educate on, we introduce KR-117 taking actual robotic parts to try and enslave "
+                + "humanity. "
+                + "\n"
+                + "Welcome to the current and future of robotics.");
         txtIntroduction.setTypeface(EasyFonts.robotoMedium(this));
 
         imgBtnAntenna = (ImageButton) findViewById(R.id.imgBtnAntenna);

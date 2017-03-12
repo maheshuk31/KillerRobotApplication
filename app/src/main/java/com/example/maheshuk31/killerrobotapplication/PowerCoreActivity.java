@@ -115,7 +115,7 @@ public class PowerCoreActivity extends AppCompatActivity {
      * cases where the user may not have the YouTube application, in which case it opens via a web
      * browser, or it will default open on the application if installed.
      *
-     * @param id The ID part of the URL of any YouTube video.
+     * @param id The ID part of the URL address of any YouTube video.
      */
     public void outclickYoutube(String id) {
         Intent applicationIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + id));
@@ -127,6 +127,10 @@ public class PowerCoreActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Overrides the normal press of the back button on the device to now close the activity needed
+     * to save memory from background activities that are open.
+     */
     @Override
     public void onBackPressed() {
         super.onBackPressed();
