@@ -21,7 +21,7 @@ import com.vstechlab.easyfonts.EasyFonts;
  */
 public class AntennaActivity extends AppCompatActivity {
 
-    private TextView txtAntennaTitle, txtAntennaTextPt1, txtAntennaTextPt2, txtAntennaTextPt3;
+    private TextView txtAntennaTitle, txtAntennaTextPt1, txtAntennaTextPt2, txtAntennaTextPt3, txtAntennaURL;
     private ImageButton imgBtnAntennaVideo;
     private ImageView imgAntenna;
     private SeekBar seekBarAntenna;
@@ -38,6 +38,7 @@ public class AntennaActivity extends AppCompatActivity {
         txtAntennaTextPt2 = (TextView) findViewById(R.id.txtAntennaTextPt2);
         txtAntennaTextPt3 = (TextView) findViewById(R.id.txtAntennaTextPt3);
         imgBtnAntennaVideo = (ImageButton) findViewById(R.id.imgBtnAntennaVideo);
+        txtAntennaURL = (TextView) findViewById(R.id.txtAntennaURL);
 
         txtAntennaTitle.setTypeface(EasyFonts.captureIt(this));
 
@@ -102,6 +103,15 @@ public class AntennaActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+        txtAntennaURL.setTypeface(EasyFonts.freedom(this));
+        txtAntennaURL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "http://mars.nasa.gov/msl/";
+                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)));
             }
         });
     }

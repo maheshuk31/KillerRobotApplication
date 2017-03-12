@@ -21,7 +21,7 @@ import com.vstechlab.easyfonts.EasyFonts;
  */
 public class PowerCoreActivity extends AppCompatActivity {
 
-    private TextView txtPowerCoreTitle, txtPowerCoreTextPt1, txtPowerCoreTextPt2, txtPowerCoreTextPt3;
+    private TextView txtPowerCoreTitle, txtPowerCoreTextPt1, txtPowerCoreTextPt2, txtPowerCoreTextPt3, txtPowerCoreURL;
     private ImageButton imgBtnPowerCoreVideo;
     private ImageView imgPowerCore;
     private SeekBar seekBarPowerCore;
@@ -38,6 +38,7 @@ public class PowerCoreActivity extends AppCompatActivity {
         txtPowerCoreTextPt2 = (TextView) findViewById(R.id.txtPowerCoreTextPt2);
         txtPowerCoreTextPt3 = (TextView) findViewById(R.id.txtPowerCoreTextPt3);
         imgBtnPowerCoreVideo = (ImageButton) findViewById(R.id.imgBtnPowerCoreVideo);
+        txtPowerCoreURL = (TextView) findViewById(R.id.txtPowerCoreURL);
 
         txtPowerCoreTitle.setTypeface(EasyFonts.captureIt(this));
 
@@ -103,6 +104,15 @@ public class PowerCoreActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+        txtPowerCoreURL.setTypeface(EasyFonts.freedom(this));
+        txtPowerCoreURL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "http://solarsystem.nasa.gov/rps/rtg.cfm";
+                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)));
             }
         });
     }

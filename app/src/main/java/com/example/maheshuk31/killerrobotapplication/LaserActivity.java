@@ -21,7 +21,7 @@ import com.vstechlab.easyfonts.EasyFonts;
  */
 public class LaserActivity extends AppCompatActivity {
 
-    private TextView txtLaserTitle, txtLaserTextPt1, txtLaserTextPt2, txtLaserTextPt3;
+    private TextView txtLaserTitle, txtLaserTextPt1, txtLaserTextPt2, txtLaserTextPt3, txtLaserURL;
     private ImageButton imgBtnLaserVideo;
     private ImageView imgLaser;
     private SeekBar seekBarLaser;
@@ -38,10 +38,10 @@ public class LaserActivity extends AppCompatActivity {
         txtLaserTextPt2 = (TextView) findViewById(R.id.txtLaserTextPt2);
         txtLaserTextPt3 = (TextView) findViewById(R.id.txtLaserTextPt3);
         imgBtnLaserVideo = (ImageButton) findViewById(R.id.imgBtnLaserVideo);
+        txtLaserURL = (TextView) findViewById(R.id.txtLaserURL);
 
         txtLaserTitle.setTypeface(EasyFonts.captureIt(this));
 
-        String brochureURL = "http://www.cyberknife.com/uploadedFiles/CyberKnife_Overview/500929.A_CyberKnife_Patient_Brochure_FINAL.pdf";
         String stringHandPt1 =
                 "<B><U>Uses:</U></B> <I>Robotic Radiosurgery System</I>" +
                         "<BR/>" +
@@ -101,6 +101,15 @@ public class LaserActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+        txtLaserURL.setTypeface(EasyFonts.freedom(this));
+        txtLaserURL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "http://cyberknife.com/";
+                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)));
             }
         });
     }

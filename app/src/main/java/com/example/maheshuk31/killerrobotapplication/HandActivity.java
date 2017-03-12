@@ -21,7 +21,7 @@ import com.vstechlab.easyfonts.EasyFonts;
  */
 public class HandActivity extends AppCompatActivity {
 
-    private TextView txtHandTitle, txtHandTextPt1, txtHandTextPt2, txtHandTextPt3;
+    private TextView txtHandTitle, txtHandTextPt1, txtHandTextPt2, txtHandTextPt3, txtHandURL;
     private ImageButton imgBtnHandVideo;
     private ImageView imgHand;
     private SeekBar seekBarHand;
@@ -38,6 +38,7 @@ public class HandActivity extends AppCompatActivity {
         txtHandTextPt2 = (TextView) findViewById(R.id.txtHandTextPt2);
         txtHandTextPt3 = (TextView) findViewById(R.id.txtHandTextPt3);
         imgBtnHandVideo = (ImageButton) findViewById(R.id.imgBtnHandVideo);
+        txtHandURL = (TextView) findViewById(R.id.txtHandURL);
 
         txtHandTitle.setTypeface(EasyFonts.captureIt(this));
 
@@ -101,6 +102,15 @@ public class HandActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+        txtHandTitle.setTypeface(EasyFonts.freedom(this));
+        txtHandTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://www.shadowrobot.com/products/dexterous-hand/";
+                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)));
             }
         });
     }

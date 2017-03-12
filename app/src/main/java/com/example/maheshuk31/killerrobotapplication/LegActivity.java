@@ -21,7 +21,7 @@ import com.vstechlab.easyfonts.EasyFonts;
  */
 public class LegActivity extends AppCompatActivity {
 
-    private TextView txtLegTitle, txtLegTextPt1, txtLegTextPt2, txtLegTextPt3;
+    private TextView txtLegTitle, txtLegTextPt1, txtLegTextPt2, txtLegTextPt3, txtLegURL;
     private ImageButton imgBtnLegVideo;
     private ImageView imgLeg;
     private SeekBar seekBarLeg;
@@ -38,6 +38,7 @@ public class LegActivity extends AppCompatActivity {
         txtLegTextPt2 = (TextView) findViewById(R.id.txtLegTextPt2);
         txtLegTextPt3 = (TextView) findViewById(R.id.txtLegTextPt3);
         imgBtnLegVideo = (ImageButton) findViewById(R.id.imgBtnLegVideo);
+        txtLegURL = (TextView) findViewById(R.id.txtLegURL);
 
         txtLegTitle.setTypeface(EasyFonts.captureIt(this));
 
@@ -100,6 +101,15 @@ public class LegActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+        txtLegURL.setTypeface(EasyFonts.freedom(this));
+        txtLegURL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "http://www.stiff-flop.eu/index.php/en/";
+                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)));
             }
         });
     }

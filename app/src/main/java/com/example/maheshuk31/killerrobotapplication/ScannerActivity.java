@@ -21,7 +21,7 @@ import com.vstechlab.easyfonts.EasyFonts;
  */
 public class ScannerActivity extends AppCompatActivity {
 
-    private TextView txtScannerTitle, txtScannerTextPt1, txtScannerTextPt2, txtScannerTextPt3;
+    private TextView txtScannerTitle, txtScannerTextPt1, txtScannerTextPt2, txtScannerTextPt3, txtScannerURL;
     private ImageButton imgBtnScannerVideo;
     private ImageView imgScanner;
     private SeekBar seekBarScanner;
@@ -38,6 +38,7 @@ public class ScannerActivity extends AppCompatActivity {
         txtScannerTextPt2 = (TextView) findViewById(R.id.txtScannerTextPt2);
         txtScannerTextPt3 = (TextView) findViewById(R.id.txtScannerTextPt3);
         imgBtnScannerVideo = (ImageButton) findViewById(R.id.imgBtnScannerVideo);
+        txtScannerURL = (TextView) findViewById(R.id.txtScannerURL);
 
         txtScannerTitle.setTypeface(EasyFonts.captureIt(this));
 
@@ -102,6 +103,15 @@ public class ScannerActivity extends AppCompatActivity {
             public void onStopTrackingTouch(SeekBar seekBar) {
             }
         });
+
+        txtScannerURL.setTypeface(EasyFonts.freedom(this));
+        txtScannerURL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://spotlight.kcl.ac.uk/2016/09/22/how-could-wearable-and-smartphone-tech-help-people-with-depression-epilepsy-and-ms/";
+                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)));
+            }
+        });
     }
 
     /**
@@ -130,5 +140,4 @@ public class ScannerActivity extends AppCompatActivity {
         super.onBackPressed();
         this.finish();
     }
-
 }

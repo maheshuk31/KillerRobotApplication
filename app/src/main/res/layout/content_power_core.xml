@@ -87,6 +87,16 @@
                 android:text="text3"
                 android:textColor="#192e8c"
                 android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/txtPowerCoreURL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Tap for more information"
+                android:textColor="#580101"
+                android:textSize="12dp"
+                android:textStyle="italic" />
         </LinearLayout>
     </RelativeLayout>
 </ScrollView>
