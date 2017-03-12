@@ -14,10 +14,11 @@
         android:layout_height="match_parent">
 
         <ImageView
+            android:id="@+id/imgViewSomersetHouse"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/somersethouse_quad"
-            android:adjustViewBounds="true"/>
+            android:adjustViewBounds="true"
+            android:src="@drawable/somersethouse_quad" />
 
         <ImageButton
             android:id="@+id/imgBtnExhibitionBody"
