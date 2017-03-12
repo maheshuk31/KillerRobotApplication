@@ -96,8 +96,8 @@ public class emailSending extends AsyncTask<Void, Void, Void> {
             Calendar calendar = Calendar.getInstance();
             int ampm = calendar.get(Calendar.AM_PM);
             String am_pm;
-            int hourofday = calendar.get(Calendar.HOUR_OF_DAY);
-            if (hourofday < 12) {
+            int hourOfDay = calendar.get(Calendar.HOUR_OF_DAY);
+            if (hourOfDay < 12) {
                 am_pm = "am";
             } else {
                 am_pm = "pm";
@@ -110,7 +110,6 @@ public class emailSending extends AsyncTask<Void, Void, Void> {
             mm.setText(message);
 
             Transport.send(mm);
-
         } catch (MessagingException e) {
             e.printStackTrace();
         }

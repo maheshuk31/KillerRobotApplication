@@ -120,9 +120,7 @@
                         android:checked="true"
                         android:text="Targets"
                         android:textSize="11dp" />
-
                 </RelativeLayout>
-
             </LinearLayout>
 
             <TextView
@@ -168,7 +166,6 @@
                         android:shadowRadius="4"
                         android:text="GPS Feature"
                         android:textColor="#FF0000" />
-
                 </TableRow>
 
                 <TableRow
@@ -202,7 +199,6 @@
                         android:shadowRadius="4"
                         android:text="Feedback"
                         android:textColor="#FF0000" />
-
                 </TableRow>
 
                 <TableRow
@@ -236,7 +232,6 @@
                         android:shadowRadius="4"
                         android:text="Science Gallery"
                         android:textColor="#FF0000" />
-
                 </TableRow>
 
                 <TableRow
@@ -257,7 +252,6 @@
                         android:shadowRadius="4"
                         android:text="Exhibtion Map"
                         android:textColor="#FF0000" />
-
                 </TableRow>
 
             </TableLayout>

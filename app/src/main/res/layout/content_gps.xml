@@ -239,6 +239,5 @@
                     android:textColor="#FF0000" />
             </TableRow>
         </TableLayout>
-
     </RelativeLayout>
 </ScrollView>

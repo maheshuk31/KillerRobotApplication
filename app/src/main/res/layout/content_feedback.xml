@@ -67,8 +67,6 @@
                 android:background="@drawable/edittext_main"
                 android:hint="Message" />
         </LinearLayout>
-
-
     </LinearLayout>
 
     <LinearLayout
@@ -91,6 +89,5 @@
             android:shadowRadius="4"
             android:text="Send"
             android:textColor="#FF0000" />
-
     </LinearLayout>
 </RelativeLayout>

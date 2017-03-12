@@ -24,55 +24,55 @@
             android:id="@+id/imgBtnExhibitionBody"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/imgBtnExhibitionArm"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="39dp"
             android:adjustViewBounds="true"
             android:background="@null"
             android:src="@drawable/exhibition_body"
             tools:layout_editor_absoluteX="310dp"
-            tools:layout_editor_absoluteY="85dp"
-            android:layout_below="@+id/imgBtnExhibitionArm"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="39dp" />
+            tools:layout_editor_absoluteY="85dp" />
 
         <ImageButton
             android:id="@+id/imgBtnExhibitionLeg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/imgBtnExhibitionScanner"
             android:layout_marginEnd="38dp"
+            android:layout_marginTop="15dp"
             android:adjustViewBounds="true"
             android:background="@null"
             android:src="@drawable/exhibition_legs"
             tools:layout_editor_absoluteX="524dp"
-            tools:layout_editor_absoluteY="210dp"
-            android:layout_marginTop="15dp"
-            android:layout_alignTop="@+id/imgBtnExhibitionScanner"
-            android:layout_alignParentEnd="true" />
+            tools:layout_editor_absoluteY="210dp" />
 
         <ImageButton
             android:id="@+id/imgBtnExhibitionScanner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/imgBtnExhibitionBody"
+            android:layout_alignParentTop="true"
             android:layout_marginEnd="60dp"
+            android:layout_marginTop="20dp"
             android:adjustViewBounds="true"
             android:background="@null"
             android:src="@drawable/exhibition_scanner"
             tools:layout_editor_absoluteX="103dp"
-            tools:layout_editor_absoluteY="29dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignEnd="@+id/imgBtnExhibitionBody"
-            android:layout_marginTop="20dp" />
+            tools:layout_editor_absoluteY="29dp" />
 
         <ImageButton
             android:id="@+id/imgBtnExhibitionAntenna"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/imgBtnExhibitionLeg"
+            android:layout_alignTop="@+id/imgBtnExhibitionLaser"
             android:layout_marginEnd="37dp"
             android:adjustViewBounds="true"
             android:background="@null"
             android:src="@drawable/exhibition_antenna"
             tools:layout_editor_absoluteX="84dp"
-            tools:layout_editor_absoluteY="176dp"
-            android:layout_alignTop="@+id/imgBtnExhibitionLaser"
-            android:layout_alignEnd="@+id/imgBtnExhibitionLeg" />
+            tools:layout_editor_absoluteY="176dp" />
 
         <ImageButton
             android:id="@+id/imgBtnExhibitionArm"
@@ -91,15 +91,15 @@
             android:id="@+id/imgBtnExhibitionLaser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/imgBtnExhibitionLeg"
             android:layout_marginStart="34dp"
+            android:layout_marginTop="82dp"
             android:adjustViewBounds="true"
             android:background="@null"
             android:src="@drawable/exhibition_laser"
             tools:layout_editor_absoluteX="28dp"
-            tools:layout_editor_absoluteY="302dp"
-            android:layout_below="@+id/imgBtnExhibitionLeg"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="82dp" />
+            tools:layout_editor_absoluteY="302dp" />
 
     </RelativeLayout>
 </ScrollView>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_about_us"
@@ -10,72 +10,89 @@
     tools:context="com.example.maheshuk31.killerrobotapplication.AboutUsActivity"
     tools:showIn="@layout/activity_about_us">
 
-    <LinearLayout
-        android:id="@+id/linLayAboutBanner"
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/imageBanner"
+        <LinearLayout
+            android:id="@+id/linLayAboutBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/about_us_header" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linLayAboutText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            app:srcCompat="@drawable/about_us_header" />
+            android:layout_below="@+id/linLayAboutBanner"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linLayAboutText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linLayAboutBanner"
-        android:layout_marginTop="5dp"
-        android:orientation="vertical">
-
-
-        <TextView
-            android:id="@+id/txtAboutText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:text="CORE (Centre for Robotics Research) of King's College have partnered with Science Gallery to produce an exhibition designed to educate you about the robotics that are in society today or in the impending future.
+            <TextView
+                android:id="@+id/txtAboutText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CORE (Centre for Robotics Research) of King's College have partnered with Science Gallery to produce an exhibition designed to educate you about the robotics that are in society today or in the impending future.
 Designed to be interactive it provides a unique experience into what a &quot;killer&quot; robot could entail with regards to its' separately destroyed parts scattered all over Somerset House Courtyard. "
-            android:textColor="#192e8c" />
-    </LinearLayout>
+                android:textColor="#192e8c"
+                android:textSize="18dp" />
+        </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linLayMap"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linLayAboutText"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal"
-        android:weightSum="1">
-
-        <ImageButton
-            android:id="@+id/imageMap"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:id="@+id/linLayMap"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.75"
-            android:adjustViewBounds="true"
-            android:background="#00000000"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/about_us_map_compressed" />
+            android:layout_below="@+id/linLayAboutText"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
 
-        <TextView
-            android:id="@+id/txtAboutMapText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="0.25"
-            android:gravity="center"
-            android:text="We are here. Click the map to open it up on the Google Map Application "
-            android:textColor="#000000"
-            android:textSize="12dp"
-            android:textStyle="bold|italic" />
+            <ImageButton
+                android:id="@+id/imageMap"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.75"
+                android:adjustViewBounds="true"
+                android:background="#00000000"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/about_us_map_compressed" />
 
+            <TextView
+                android:id="@+id/txtAboutMapText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:text="We are here. Click the map to open it up on the Google Map Application "
+                android:textColor="#000000"
+                android:textSize="12dp"
+                android:textStyle="bold|italic" />
+        </LinearLayout>
 
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linLayStoryHolder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/linLayMap"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
 
-</RelativeLayout>
+            <TextView
+                android:id="@+id/txtAboutStory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Story"
+                android:textColor="#192e8c"
+                android:textSize="18dp" />
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

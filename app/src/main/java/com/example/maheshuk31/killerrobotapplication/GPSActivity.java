@@ -56,7 +56,7 @@ public class GPSActivity extends AppCompatActivity implements LocationListener {
         txtGPSTextExplanation = (TextView) findViewById(R.id.txtGPSTextExplanation);
 
         txtGPSCurrentLocation.setText("GPS");
-        if(GPSEnabled == false){
+        if (GPSEnabled == false) {
             txtGPSCurrentLocation.setText("There is no location found, please check your GPS is enabled and press the refresh button. ");
         }
 

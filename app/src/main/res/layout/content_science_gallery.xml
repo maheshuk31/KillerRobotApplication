@@ -27,7 +27,6 @@
                 android:layout_gravity="left"
                 android:adjustViewBounds="true"
                 app:srcCompat="@drawable/science_gallery_headerpng" />
-
         </LinearLayout>
 
 
@@ -46,11 +45,7 @@
                 android:text="Originally located in Dublin, Ireland this unique experience involves combining art with science to provide a unique interactive experience to people where everything is brought to life-size for maximum fun and learning.
 Now in Autumn 2018, at London Bridge at Guy's Campus, we King's College will open available to be visited for free. And this exhibition wouldn't have happened without the Science Gallery's help and contribution"
                 android:textColor="#192e8c"
-                android:textSize="18dp">
-
-            </TextView>
-
-
+                android:textSize="18dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -72,12 +67,11 @@ Now in Autumn 2018, at London Bridge at Guy's Campus, we King's College will ope
                 android:id="@+id/txtScienceGalleryConcept"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:text="Concept of the Science Gallery at Guy's Campus, at London Bridge"
                 android:textColor="#580101"
                 android:textSize="12dp"
-                android:layout_marginBottom="10dp"
                 android:textStyle="italic" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -94,7 +88,6 @@ Now in Autumn 2018, at London Bridge at Guy's Campus, we King's College will ope
                 android:layout_height="wrap_content"
                 android:textColor="#0058b1"
                 android:textStyle="bold" />
-
         </LinearLayout>
     </RelativeLayout>
 </ScrollView>
