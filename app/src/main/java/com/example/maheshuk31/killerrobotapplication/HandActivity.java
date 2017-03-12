@@ -16,13 +16,15 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.vstechlab.easyfonts.EasyFonts;
+
 /**
  * Page about the robot's hand loads when clicking the target on the hand of the robot on the
  * MainActivity.
  */
 public class HandActivity extends AppCompatActivity {
 
-    private TextView txtHandTextPt1, txtHandTextPt2, txtHandTextPt3;
+    private TextView txtHandTitle, txtHandTextPt1, txtHandTextPt2, txtHandTextPt3;
     private ImageButton imgBtnHandVideo;
     private ImageView imgHand;
     private SeekBar seekBarHand;
@@ -34,10 +36,13 @@ public class HandActivity extends AppCompatActivity {
 
         imgHand = (ImageView) findViewById(R.id.imgHand);
         seekBarHand = (SeekBar) findViewById(R.id.seekBarHand);
+        txtHandTitle = (TextView) findViewById(R.id.txtHandTitle);
         txtHandTextPt1 = (TextView) findViewById(R.id.txtHandTextPt1);
         txtHandTextPt2 = (TextView) findViewById(R.id.txtHandTextPt2);
         txtHandTextPt3 = (TextView) findViewById(R.id.txtHandTextPt3);
         imgBtnHandVideo = (ImageButton) findViewById(R.id.imgBtnHandVideo);
+
+        txtHandTitle.setTypeface(EasyFonts.captureIt(this));
 
         String stringHandPt1 =
                 "<B><U>Uses:</U></B> <I>Autonomous Grasping</I>" +
@@ -66,8 +71,11 @@ public class HandActivity extends AppCompatActivity {
         Spanned stringHandHTMLPt3 = Html.fromHtml(stringHandPt3);
 
         txtHandTextPt1.setText(stringHandHTMLPt1);
+        txtHandTextPt1.setTypeface(EasyFonts.robotoMedium(this));
         txtHandTextPt2.setText(stringHandHTMLPt2);
+        txtHandTextPt2.setTypeface(EasyFonts.robotoMedium(this));
         txtHandTextPt3.setText(stringHandHTMLPt3);
+        txtHandTextPt3.setTypeface(EasyFonts.robotoMedium(this));
 
         imgBtnHandVideo.setOnClickListener(new View.OnClickListener() {
             @Override

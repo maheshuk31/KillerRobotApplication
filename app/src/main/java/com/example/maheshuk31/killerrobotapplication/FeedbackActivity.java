@@ -8,6 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import com.vstechlab.easyfonts.EasyFonts;
 
 /**
  * Page that allows a user to give feedback on the application or any questions pertaining to this
@@ -15,6 +18,7 @@ import android.widget.EditText;
  */
 public class FeedbackActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private TextView txtFeedbackTitle;
     private EditText txtName, txtEmail, txtMessage;
     private Button btnSendFeedback;
     private String feedbackName, feedbackEmail, feedbackMessage, message;
@@ -25,11 +29,15 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
 
+        txtFeedbackTitle = (TextView) findViewById(R.id.txtFeedbackTitle);
         txtName = (EditText) findViewById(R.id.txtFeedbackName);
         txtEmail = (EditText) findViewById(R.id.txtFeedbackEmail);
         txtMessage = (EditText) findViewById(R.id.txtFeedbackMessage);
-
         btnSendFeedback = (Button) findViewById(R.id.btnSendFeedback);
+
+        txtFeedbackTitle.setTypeface(EasyFonts.freedom(this));
+        txtFeedbackTitle.setTextSize(25f);
+
         btnSendFeedback.setOnClickListener(this);
     }
 

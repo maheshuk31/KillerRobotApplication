@@ -16,13 +16,15 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.vstechlab.easyfonts.EasyFonts;
+
 /**
  * Page about the robot's laser gun loads when clicking the target on the laser gun of the robot on the
  * MainActivity.
  */
 public class LaserActivity extends AppCompatActivity {
 
-    private TextView txtLaserTextPt1, txtLaserTextPt2, txtLaserTextPt3;
+    private TextView txtLaserTitle, txtLaserTextPt1, txtLaserTextPt2, txtLaserTextPt3;
     private ImageButton imgBtnLaserVideo;
     private ImageView imgLaser;
     private SeekBar seekBarLaser;
@@ -34,10 +36,13 @@ public class LaserActivity extends AppCompatActivity {
 
         imgLaser = (ImageView) findViewById(R.id.imgLaser);
         seekBarLaser = (SeekBar) findViewById(R.id.seekBarLaser);
+        txtLaserTitle = (TextView) findViewById(R.id.txtLaserTitle);
         txtLaserTextPt1 = (TextView) findViewById(R.id.txtLaserTextPt1);
         txtLaserTextPt2 = (TextView) findViewById(R.id.txtLaserTextPt2);
         txtLaserTextPt3 = (TextView) findViewById(R.id.txtLaserTextPt3);
         imgBtnLaserVideo = (ImageButton) findViewById(R.id.imgBtnLaserVideo);
+
+        txtLaserTitle.setTypeface(EasyFonts.captureIt(this));
 
         String brochureURL = "http://www.cyberknife.com/uploadedFiles/CyberKnife_Overview/500929.A_CyberKnife_Patient_Brochure_FINAL.pdf";
         String stringHandPt1 =
@@ -66,8 +71,11 @@ public class LaserActivity extends AppCompatActivity {
         Spanned stringHandHTMLPt3 = Html.fromHtml(stringHandPt3);
 
         txtLaserTextPt1.setText(stringHandHTMLPt1);
+        txtLaserTextPt1.setTypeface(EasyFonts.robotoMedium(this));
         txtLaserTextPt2.setText(stringHandHTMLPt2);
+        txtLaserTextPt2.setTypeface(EasyFonts.robotoMedium(this));
         txtLaserTextPt3.setText(stringHandHTMLPt3);
+        txtLaserTextPt3.setTypeface(EasyFonts.robotoMedium(this));
 
         imgBtnLaserVideo.setOnClickListener(new View.OnClickListener() {
             @Override

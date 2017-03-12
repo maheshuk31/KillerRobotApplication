@@ -16,13 +16,15 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.vstechlab.easyfonts.EasyFonts;
+
 /**
  * Page about the robot's eye scanner loads when clicking the target on the eye scanner of the robot
  * on the MainActivity.
  */
 public class ScannerActivity extends AppCompatActivity {
 
-    private TextView txtScannerTextPt1, txtScannerTextPt2, txtScannerTextPt3;
+    private TextView txtScannerTitle, txtScannerTextPt1, txtScannerTextPt2, txtScannerTextPt3;
     private ImageButton imgBtnScannerVideo;
     private ImageView imgScanner;
     private SeekBar seekBarScanner;
@@ -34,10 +36,13 @@ public class ScannerActivity extends AppCompatActivity {
 
         imgScanner = (ImageView) findViewById(R.id.imgScanner);
         seekBarScanner = (SeekBar) findViewById(R.id.seekBarScanner);
+        txtScannerTitle = (TextView) findViewById(R.id.txtScannerTitle);
         txtScannerTextPt1 = (TextView) findViewById(R.id.txtScannerTextPt1);
         txtScannerTextPt2 = (TextView) findViewById(R.id.txtScannerTextPt2);
         txtScannerTextPt3 = (TextView) findViewById(R.id.txtScannerTextPt3);
         imgBtnScannerVideo = (ImageButton) findViewById(R.id.imgBtnScannerVideo);
+
+        txtScannerTitle.setTypeface(EasyFonts.captureIt(this));
 
         String stringHandPt1 =
                 "<B><U>Uses:</U></B> <I>KCL Spotlight Research</I>" +
@@ -65,8 +70,11 @@ public class ScannerActivity extends AppCompatActivity {
         Spanned stringHandHTMLPt3 = Html.fromHtml(stringHandPt3);
 
         txtScannerTextPt1.setText(stringHandHTMLPt1);
+        txtScannerTextPt1.setTypeface(EasyFonts.robotoMedium(this));
         txtScannerTextPt2.setText(stringHandHTMLPt2);
+        txtScannerTextPt2.setTypeface(EasyFonts.robotoMedium(this));
         txtScannerTextPt3.setText(stringHandHTMLPt3);
+        txtScannerTextPt3.setTypeface(EasyFonts.robotoMedium(this));
 
         imgBtnScannerVideo.setOnClickListener(new View.OnClickListener() {
             @Override

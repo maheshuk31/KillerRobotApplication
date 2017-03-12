@@ -17,13 +17,15 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.vstechlab.easyfonts.EasyFonts;
+
 /**
  * Page about the robot's antenna loads when clicking the target on the antenna of the robot on the
  * MainActivity.
  */
 public class AntennaActivity extends AppCompatActivity {
 
-    private TextView txtAntennaTextPt1, txtAntennaTextPt2, txtAntennaTextPt3;
+    private TextView txtAntennaTitle, txtAntennaTextPt1, txtAntennaTextPt2, txtAntennaTextPt3;
     private ImageButton imgBtnAntennaVideo;
     private ImageView imgAntenna;
     private SeekBar seekBarAntenna;
@@ -35,10 +37,13 @@ public class AntennaActivity extends AppCompatActivity {
 
         imgAntenna = (ImageView) findViewById(R.id.imgAntenna);
         seekBarAntenna = (SeekBar) findViewById(R.id.seekBarAntenna);
+        txtAntennaTitle = (TextView) findViewById(R.id.txtAntennaTitle);
         txtAntennaTextPt1 = (TextView) findViewById(R.id.txtAntennaTextPt1);
         txtAntennaTextPt2 = (TextView) findViewById(R.id.txtAntennaTextPt2);
         txtAntennaTextPt3 = (TextView) findViewById(R.id.txtAntennaTextPt3);
         imgBtnAntennaVideo = (ImageButton) findViewById(R.id.imgBtnAntennaVideo);
+
+        txtAntennaTitle.setTypeface(EasyFonts.captureIt(this));
 
         String stringAntennaPt1 =
                 "<B><U>Uses:</U></B> <I>Satellite and Military Communications</I>" +
@@ -68,8 +73,11 @@ public class AntennaActivity extends AppCompatActivity {
         Spanned stringAntennaHTMLPt3 = Html.fromHtml(stringAntennaPt3);
 
         txtAntennaTextPt1.setText(stringAntennaHTMLPt1);
+        txtAntennaTextPt1.setTypeface(EasyFonts.robotoMedium(this));
         txtAntennaTextPt2.setText(stringAntennaHTMLPt2);
+        txtAntennaTextPt2.setTypeface(EasyFonts.robotoMedium(this));
         txtAntennaTextPt3.setText(stringAntennaHTMLPt3);
+        txtAntennaTextPt3.setTypeface(EasyFonts.robotoMedium(this));
 
         imgBtnAntennaVideo.setOnClickListener(new View.OnClickListener() {
             @Override

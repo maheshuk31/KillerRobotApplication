@@ -16,13 +16,15 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.vstechlab.easyfonts.EasyFonts;
+
 /**
  * Page about the robot's leg loads when clicking the target on the leg of the robot on the
  * MainActivity.
  */
 public class LegActivity extends AppCompatActivity {
 
-    private TextView txtLegTextPt1, txtLegTextPt2, txtLegTextPt3;
+    private TextView txtLegTitle, txtLegTextPt1, txtLegTextPt2, txtLegTextPt3;
     private ImageButton imgBtnLegVideo;
     private ImageView imgLeg;
     private SeekBar seekBarLeg;
@@ -34,10 +36,13 @@ public class LegActivity extends AppCompatActivity {
 
         imgLeg = (ImageView) findViewById(R.id.imgLeg);
         seekBarLeg = (SeekBar) findViewById(R.id.seekBarLeg);
+        txtLegTitle = (TextView) findViewById(R.id.txtLegTitle);
         txtLegTextPt1 = (TextView) findViewById(R.id.txtLegTextPt1);
         txtLegTextPt2 = (TextView) findViewById(R.id.txtLegTextPt2);
         txtLegTextPt3 = (TextView) findViewById(R.id.txtLegTextPt3);
         imgBtnLegVideo = (ImageButton) findViewById(R.id.imgBtnLegVideo);
+
+        txtLegTitle.setTypeface(EasyFonts.captureIt(this));
 
         String stringHandPt1 =
                 "<B><U>Uses:</U></B> <I>Flexible Invasive Surgery Tool</I>" +
@@ -65,8 +70,11 @@ public class LegActivity extends AppCompatActivity {
         Spanned stringHandHTMLPt3 = Html.fromHtml(stringHandPt3);
 
         txtLegTextPt1.setText(stringHandHTMLPt1);
+        txtLegTextPt1.setTypeface(EasyFonts.robotoMedium(this));
         txtLegTextPt2.setText(stringHandHTMLPt2);
+        txtLegTextPt2.setTypeface(EasyFonts.robotoMedium(this));
         txtLegTextPt3.setText(stringHandHTMLPt3);
+        txtLegTextPt3.setTypeface(EasyFonts.robotoMedium(this));
 
         imgBtnLegVideo.setOnClickListener(new View.OnClickListener() {
             @Override

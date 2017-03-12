@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import com.vstechlab.easyfonts.EasyFonts;
 
 /**
  * The first page that the user will see when the application is opened, the main activity
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 "humanity. "
                 + "\n" +
                 "Welcome to the current and future of robotics");
+        txtIntroduction.setTypeface(EasyFonts.robotoMedium(this));
 
         imgBtnAntenna = (ImageButton) findViewById(R.id.imgBtnAntenna);
         imgBtnAntenna.setOnClickListener(new View.OnClickListener() {

@@ -10,21 +10,31 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
+import com.vstechlab.easyfonts.EasyFonts;
+
 /**
  * Page explaining science gallery and pertaining towards this project containing a link to their
  * website opening it on the device's browser.
  */
 public class ScienceGalleryActivity extends AppCompatActivity {
 
-    private TextView txtScienceGalleryMoreInfo;
+    private TextView txtScienceGalleryText, txtScienceGalleryConcept, txtScienceGalleryMoreInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_science_gallery);
 
+        txtScienceGalleryText = (TextView) findViewById(R.id.txtScienceGalleryText);
+        txtScienceGalleryConcept = (TextView) findViewById(R.id.txtScienceGalleryConcept);
         txtScienceGalleryMoreInfo = (TextView) findViewById(R.id.txtScienceGalleryMoreInfo);
+
+        txtScienceGalleryText.setTypeface(EasyFonts.robotoMedium(this));
+
+        txtScienceGalleryConcept.setTypeface(EasyFonts.caviarDreamsItalic(this));
+
         txtScienceGalleryMoreInfo.setText("Click For more information about Science Gallery");
+        txtScienceGalleryMoreInfo.setTypeface(EasyFonts.freedom(this));
         txtScienceGalleryMoreInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

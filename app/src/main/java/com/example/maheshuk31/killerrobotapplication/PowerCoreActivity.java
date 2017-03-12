@@ -16,13 +16,15 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.vstechlab.easyfonts.EasyFonts;
+
 /**
  * Page about the robot's power core loads when clicking the target on the power core of the robot
  * on the MainActivity.
  */
 public class PowerCoreActivity extends AppCompatActivity {
 
-    private TextView txtPowerCoreTextPt1, txtPowerCoreTextPt2, txtPowerCoreTextPt3;
+    private TextView txtPowerCoreTitle, txtPowerCoreTextPt1, txtPowerCoreTextPt2, txtPowerCoreTextPt3;
     private ImageButton imgBtnPowerCoreVideo;
     private ImageView imgPowerCore;
     private SeekBar seekBarPowerCore;
@@ -34,10 +36,13 @@ public class PowerCoreActivity extends AppCompatActivity {
 
         imgPowerCore = (ImageView) findViewById(R.id.imgPowerCore);
         seekBarPowerCore = (SeekBar) findViewById(R.id.seekBarPowerCore);
+        txtPowerCoreTitle = (TextView) findViewById(R.id.txtPowerCoreTitle);
         txtPowerCoreTextPt1 = (TextView) findViewById(R.id.txtPowerCoreTextPt1);
         txtPowerCoreTextPt2 = (TextView) findViewById(R.id.txtPowerCoreTextPt2);
         txtPowerCoreTextPt3 = (TextView) findViewById(R.id.txtPowerCoreTextPt3);
         imgBtnPowerCoreVideo = (ImageButton) findViewById(R.id.imgBtnPowerCoreVideo);
+
+        txtPowerCoreTitle.setTypeface(EasyFonts.captureIt(this));
 
         String stringHandPt1 =
                 "<B><U>Uses:</U></B> <I>Providing Electricity Power</I>" +
@@ -68,8 +73,11 @@ public class PowerCoreActivity extends AppCompatActivity {
         Spanned stringHandHTMLPt3 = Html.fromHtml(stringHandPt3);
 
         txtPowerCoreTextPt1.setText(stringHandHTMLPt1);
+        txtPowerCoreTextPt1.setTypeface(EasyFonts.robotoMedium(this));
         txtPowerCoreTextPt2.setText(stringHandHTMLPt2);
+        txtPowerCoreTextPt2.setTypeface(EasyFonts.robotoMedium(this));
         txtPowerCoreTextPt3.setText(stringHandHTMLPt3);
+        txtPowerCoreTextPt3.setTypeface(EasyFonts.robotoMedium(this));
 
         imgBtnPowerCoreVideo.setOnClickListener(new View.OnClickListener() {
             @Override
