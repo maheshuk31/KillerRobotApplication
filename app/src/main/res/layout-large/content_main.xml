@@ -38,8 +38,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="60dp"
-                        android:layout_marginRight="60dp"
+                        android:layout_marginLeft="80dp"
+                        android:layout_marginRight="80dp"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
                         android:src="@drawable/killer_robot_shadowed" />
@@ -48,68 +48,70 @@
                         android:id="@+id/imgBtnHand"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignEnd="@+id/imgRobot"
-                        android:layout_below="@+id/imgBtnPowerCore"
                         android:alpha="0.8"
                         android:background="@null"
-                        app:srcCompat="@drawable/target" />
+                        app:srcCompat="@drawable/target"
+                        android:layout_below="@+id/imgBtnAntenna"
+                        android:layout_alignEnd="@+id/imgRobot"
+                        android:layout_marginEnd="13dp"
+                        android:layout_marginTop="254dp" />
 
                     <ImageButton
                         android:id="@+id/imgBtnPowerCore"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/imgBtnScanner"
-                        android:layout_marginTop="75dp"
-                        android:layout_toStartOf="@+id/imgBtnAntenna"
                         android:alpha="0.8"
                         android:background="@null"
-                        app:srcCompat="@drawable/target" />
+                        app:srcCompat="@drawable/target"
+                        android:layout_below="@+id/imgBtnScanner"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="150dp" />
 
                     <ImageButton
                         android:id="@+id/imgBtnLaser"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignStart="@+id/imgRobot"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="10dp"
                         android:alpha="0.8"
                         android:background="@null"
-                        app:srcCompat="@drawable/target" />
+                        app:srcCompat="@drawable/target"
+                        android:layout_below="@+id/imgBtnHand"
+                        android:layout_alignStart="@+id/imgRobot"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginTop="11dp" />
 
                     <ImageButton
                         android:id="@+id/imgBtnLeg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/imgBtnHand"
-                        android:layout_marginStart="26dp"
-                        android:layout_marginTop="45dp"
-                        android:layout_toEndOf="@+id/imgBtnLaser"
                         android:alpha="0.8"
                         android:background="@null"
-                        app:srcCompat="@drawable/target" />
+                        app:srcCompat="@drawable/target"
+                        android:layout_below="@+id/imgBtnLaser"
+                        android:layout_toStartOf="@+id/imgBtnScanner"
+                        android:layout_marginTop="69dp" />
 
                     <ImageButton
                         android:id="@+id/imgBtnAntenna"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_toStartOf="@+id/imgBtnHand"
                         android:alpha="0.8"
                         android:background="@null"
-                        app:srcCompat="@drawable/target_small" />
+                        app:srcCompat="@drawable/target"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignEnd="@+id/imgRobot"
+                        android:layout_marginEnd="116dp"
+                        android:layout_marginTop="19dp" />
 
                     <ImageButton
                         android:id="@+id/imgBtnScanner"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignTop="@+id/imgBtnAntenna"
-                        android:layout_marginTop="10dp"
-                        android:layout_toStartOf="@+id/imgBtnAntenna"
                         android:alpha="0.8"
                         android:background="@null"
-                        app:srcCompat="@drawable/target_small" />
+                        app:srcCompat="@drawable/target"
+                        android:layout_marginTop="50dp"
+                        android:layout_toStartOf="@+id/imgBtnAntenna"
+                        android:layout_marginEnd="18dp" />
 
                     <Switch
                         android:id="@+id/switchTargets"
