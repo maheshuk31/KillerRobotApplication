@@ -105,8 +105,8 @@ public class HandActivity extends AppCompatActivity {
             }
         });
 
-        txtHandTitle.setTypeface(EasyFonts.freedom(this));
-        txtHandTitle.setOnClickListener(new View.OnClickListener() {
+        txtHandURL.setTypeface(EasyFonts.freedom(this));
+        txtHandURL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String url = "https://www.shadowrobot.com/products/dexterous-hand/";
