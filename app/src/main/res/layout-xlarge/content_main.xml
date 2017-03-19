@@ -50,8 +50,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignEnd="@+id/imgRobot"
                         android:layout_below="@+id/imgBtnAntenna"
-                        android:layout_marginEnd="13dp"
-                        android:layout_marginTop="320dp"
+                        android:layout_marginTop="100dp"
                         android:alpha="0.8"
                         android:background="@null"
                         app:srcCompat="@drawable/target" />
@@ -62,7 +61,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/imgBtnScanner"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="250dp"
+                        android:layout_marginTop="55dp"
                         android:alpha="0.8"
                         android:background="@null"
                         app:srcCompat="@drawable/target" />
@@ -73,8 +72,6 @@
                         android:layout_height="wrap_content"
                         android:layout_alignStart="@+id/imgRobot"
                         android:layout_below="@+id/imgBtnHand"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="50dp"
                         android:alpha="0.8"
                         android:background="@null"
                         app:srcCompat="@drawable/target" />
@@ -84,9 +81,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/imgBtnLaser"
-                        android:layout_marginEnd="20dp"
-                        android:layout_marginTop="69dp"
-                        android:layout_toStartOf="@+id/imgBtnScanner"
+                        android:layout_marginStart="150dp"
                         android:alpha="0.8"
                         android:background="@null"
                         app:srcCompat="@drawable/target" />
@@ -97,18 +92,19 @@
                         android:layout_height="wrap_content"
                         android:layout_alignEnd="@+id/imgRobot"
                         android:layout_alignParentTop="true"
-                        android:layout_marginEnd="160dp"
-                        android:layout_marginTop="19dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_marginTop="5dp"
                         android:alpha="0.8"
                         android:background="@null"
-                        app:srcCompat="@drawable/target" />
+                        app:srcCompat="@drawable/target_small" />
 
                     <ImageButton
                         android:id="@+id/imgBtnScanner"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="35dp"
-                        android:layout_marginTop="50dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="15dp"
                         android:layout_toStartOf="@+id/imgBtnAntenna"
                         android:alpha="0.8"
                         android:background="@null"
