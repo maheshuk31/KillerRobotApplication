@@ -190,4 +190,5 @@ public class GPSActivity extends AppCompatActivity implements LocationListener {
         super.onBackPressed();
         this.finish();
     }
+
 }

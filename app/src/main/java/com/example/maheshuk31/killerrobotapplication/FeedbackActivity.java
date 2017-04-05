@@ -62,8 +62,8 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
                 + feedbackEmail + "\n" + "\n"
                 + feedbackMessage;
 
-        emailSending sm = new emailSending(this, email, message);
-        sm.execute();
+        emailSending emailSending = new emailSending(this, email, message);
+        emailSending.execute();
     }
 
     /**
@@ -75,4 +75,5 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
         super.onBackPressed();
         this.finish();
     }
+
 }

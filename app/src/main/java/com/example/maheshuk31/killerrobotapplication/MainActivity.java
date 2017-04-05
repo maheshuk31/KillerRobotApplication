@@ -211,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
         IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (intentResult != null) {
             if (intentResult.getContents() == null) {
-                Toast.makeText(this, "Scanning Cancelled", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Scan Failed", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(this, intentResult.getContents(), Toast.LENGTH_LONG).show();
                 String url = intentResult.getContents().toString();

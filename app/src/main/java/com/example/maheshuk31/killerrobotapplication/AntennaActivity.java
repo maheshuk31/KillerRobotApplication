@@ -79,7 +79,7 @@ public class AntennaActivity extends AppCompatActivity {
         imgBtnAntennaVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                outclickYoutube("MqTPwz2QCKc");
+                outClickYoutube("MqTPwz2QCKc");
             }
         });
 
@@ -123,9 +123,9 @@ public class AntennaActivity extends AppCompatActivity {
      *
      * @param id The ID part of the URL of any YouTube video.
      */
-    public void outclickYoutube(String id) {
+    public void outClickYoutube(String id) {
         Intent applicationIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + id));
-        Intent websiteIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=" + id));
+        Intent websiteIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=" + id));
         try {
             startActivity(applicationIntent);
         } catch (ActivityNotFoundException e) {
@@ -142,4 +142,5 @@ public class AntennaActivity extends AppCompatActivity {
         super.onBackPressed();
         this.finish();
     }
+
 }

@@ -126,7 +126,7 @@ public class PowerCoreActivity extends AppCompatActivity {
      */
     public void outclickYoutube(String id) {
         Intent applicationIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + id));
-        Intent websiteIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=" + id));
+        Intent websiteIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=" + id));
         try {
             startActivity(applicationIntent);
         } catch (ActivityNotFoundException e) {

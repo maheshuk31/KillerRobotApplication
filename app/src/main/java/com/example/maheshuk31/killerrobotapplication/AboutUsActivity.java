@@ -91,4 +91,5 @@ public class AboutUsActivity extends AppCompatActivity {
         super.onBackPressed();
         this.finish();
     }
+
 }

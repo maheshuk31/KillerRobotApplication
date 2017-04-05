@@ -74,14 +74,14 @@ public class emailSending extends AsyncTask<Void, Void, Void> {
      */
     @Override
     protected Void doInBackground(Void... params) {
-        Properties props = new Properties();
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.socketFactory.port", "465");
-        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.port", "465");
+        Properties properties = new Properties();
+        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.socketFactory.port", "465");
+        properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.port", "465");
 
-        session = Session.getDefaultInstance(props,
+        session = Session.getDefaultInstance(properties,
                 new javax.mail.Authenticator() {
                     protected PasswordAuthentication getPasswordAuthentication() {
                         return new PasswordAuthentication(emailConfig.sendingEmail, emailConfig.sendingPassword);
@@ -89,12 +89,11 @@ public class emailSending extends AsyncTask<Void, Void, Void> {
                 });
 
         try {
-            MimeMessage mm = new MimeMessage(session);
-            mm.setFrom(new InternetAddress(emailConfig.sendingEmail));
-            mm.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
+            MimeMessage mimeMessage = new MimeMessage(session);
+            mimeMessage.setFrom(new InternetAddress(emailConfig.sendingEmail));
+            mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
 
             Calendar calendar = Calendar.getInstance();
-            int ampm = calendar.get(Calendar.AM_PM);
             String am_pm;
             int hourOfDay = calendar.get(Calendar.HOUR_OF_DAY);
             if (hourOfDay < 12) {
@@ -106,13 +105,15 @@ public class emailSending extends AsyncTask<Void, Void, Void> {
             int hour = calendar.get(Calendar.HOUR);
             int day = calendar.get(Calendar.DAY_OF_MONTH);
             int month = calendar.get(Calendar.MONTH);
-            mm.setSubject("Feedback Received " + day + "/" + month + " " + hour + ":" + minute + am_pm);
-            mm.setText(message);
 
-            Transport.send(mm);
+            mimeMessage.setSubject("Feedback Received " + day + "/" + month + " " + hour + ":" + minute + am_pm);
+            mimeMessage.setText(message);
+
+            Transport.send(mimeMessage);
         } catch (MessagingException e) {
             e.printStackTrace();
         }
         return null;
     }
+
 }

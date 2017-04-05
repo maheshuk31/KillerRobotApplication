@@ -84,4 +84,5 @@ public class ExhibitionMapActivity extends AppCompatActivity {
         super.onBackPressed();
         this.finish();
     }
+
 }
